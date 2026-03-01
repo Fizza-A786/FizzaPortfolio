@@ -1,94 +1,49 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 
-export default function AboutMe() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-    AOS.refresh();
-  }, []);
-
+const About = () => {
   return (
-    <div className="relative min-h-screen bg-black text-white">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-purple-900/80 to-black/90" />
+    <section className="about">
 
-      <section className="relative z-10 px-8 md:px-24 py-24">
-        {/* Heading */}
-        <h2
-          className="text-4xl md:text-5xl font-bold mb-6"
-          data-aos="fade-right"
-        >
-          About <span className="text-purple-400">Me</span>
-        </h2>
+      <div className="about-container">
 
-        {/* Description */}
-        <p
-          className="max-w-3xl text-lg text-gray-300 mb-8 leading-relaxed"
-          data-aos="fade-right"
-          data-aos-delay="200"
-        >
-          I am a passionate Frontend Developer with strong expertise in building
-          modern, responsive, and scalable web applications. I specialize in
-          React.js, Tailwind CSS, and modern JavaScript, focusing on clean code,
-          performance, and smooth user experiences.
-        </p>
-
-        <p
-          className="max-w-3xl text-lg text-gray-300 mb-10 leading-relaxed"
-          data-aos="fade-right"
-          data-aos-delay="400"
-        >
-          I enjoy turning complex problems into simple, beautiful interfaces.
-          My goal is to create fast-loading, user-friendly, and visually
-          appealing web solutions that help businesses grow and users enjoy
-          seamless digital experiences.
-        </p>
-
-        {/* Skills */}
-        <div data-aos="fade-up" data-aos-delay="600">
-          <h3 className="text-2xl font-semibold mb-4 text-purple-400">
-            Skills & Technologies
-          </h3>
-
-          <div className="flex flex-wrap gap-4">
-            {[
-              "React.js",
-              "JavaScript (ES6+)",
-              "Tailwind CSS",
-              "HTML5",
-              "CSS3",
-              "Redux Toolkit",
-              "REST APIs",
-              "Git & GitHub",
-              "Responsive Design",
-            ].map((skill, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 border border-purple-500/50 rounded-full text-sm text-purple-300 hover:bg-purple-600 hover:text-white transition"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
+        {/* Image */}
+        <div className="about-image">
+          <img
+            src="https://via.placeholder.com/400"
+            alt="profile"
+          />
         </div>
 
-        {/* Experience / Mission */}
-        <div
-          className="mt-14 max-w-3xl"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
-          <h3 className="text-2xl font-semibold mb-4 text-purple-400">
-            My Mission
-          </h3>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            To deliver high-quality frontend solutions with modern technologies,
-            clean architecture, and great user experience. I aim to continuously
-            learn, grow, and contribute to impactful digital products.
+        {/* Text Content */}
+        <div className="about-content">
+          <h1>About Me</h1>
+
+          <p>
+            Hello! I'm <b>Ates</b>, a passionate Frontend Developer who loves
+            building modern and responsive websites. I specialize in creating
+            user-friendly interfaces using modern web technologies.
           </p>
+
+          <p>
+            I work with technologies like React, JavaScript, HTML, and CSS to
+            develop interactive web applications and beautiful user experiences.
+          </p>
+
+          <h3>My Skills</h3>
+
+          <ul className="skills">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React JS</li>
+            <li>Redux Toolkit</li>
+          </ul>
         </div>
-      </section>
-    </div>
+
+      </div>
+
+    </section>
   );
-}
+};
+
+export default About;
