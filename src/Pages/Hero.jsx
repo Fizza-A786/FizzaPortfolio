@@ -100,7 +100,7 @@ const Hero = ({ darkMode }) => {
             <img
               src={F1}
               alt="Fizza"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover z-0"
             />
           </div>
         </div>
