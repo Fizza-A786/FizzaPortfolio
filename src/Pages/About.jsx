@@ -27,6 +27,7 @@ const About = ({ darkMode }) => {
 
   return (
     <section
+    id="about"
       className={`py-24 px-6 md:px-20 transition-colors duration-500 ${
         darkMode ? "bg-gradient-to-br from-[#255265] via-[#203a43] to-[#40758c]" : "bg-white"
       }`}
