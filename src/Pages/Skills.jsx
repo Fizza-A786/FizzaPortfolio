@@ -1,70 +1,172 @@
-import React from "react";
-import { 
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaSass, FaBootstrap 
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaBootstrap,
+  FaCode,
 } from "react-icons/fa";
 
-const Skills = ({ darkMode }) => {
-  const skills = [
-    { icon: <FaHtml5 size={28} />, title: "HTML5", description: "Semantic, accessible, and structured markup for modern web apps." },
-    { icon: <FaCss3Alt size={28} />, title: "CSS3", description: "Responsive, modern layouts with animations and transitions." },
-    { icon: <FaJs size={28} />, title: "JavaScript", description: "Interactive web apps with vanilla JS, ES6+, and DOM manipulation." },
-    { icon: <FaReact size={28} />, title: "React.js", description: "Component-based UI, hooks, state management, and routing." },
-    { icon: <FaNodeJs size={28} />, title: "Node.js", description: "Basic backend, APIs, and full-stack integration." },
-    { icon: <FaGitAlt size={28} />, title: "Git & GitHub", description: "Version control and collaborative development." },
-    { icon: <FaSass size={28} />, title: "SASS", description: "Maintainable, modular CSS with variables and mixins." },
-    { icon: <FaBootstrap size={28} />, title: "Bootstrap", description: "Responsive components and grids for fast prototyping." },
-  ];
+import { SiReactrouter, SiTailwindcss, SiFramer } from "react-icons/si";
 
+const Skills = ({ darkMode }) => {
   return (
     <section
-      id="skills"
-      className={`py-24 px-6 md:px-20 transition-colors duration-500 ${
-        darkMode ? "bg-gradient-to-br from-[#1a2a34] via-[#203a43] to-[#2f4f5f]" : "bg-gray-50"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto text-center">
-        {/* Section Title */}
-        <div className="mb-12">
-          <h2 className={`text-4xl font-serif font-bold mb-4 transition-colors duration-500 ${darkMode ? "text-white" : "text-gray-800"}`}>
+    id="skills"
+      className="py-20 relative overflow-hidden transition-colors duration-500"
+     >
+      <div className="max-w-7xl mx-auto space-y-16 relative">
+
+        {/* LEFT FADE */}
+        <div
+          className="pointer-events-none absolute left-0 top-0 h-full w-32 z-10
+          bg-gradient-to-r from-black/20 via-black/10 to-transparent"
+        />
+
+        {/* RIGHT FADE */}
+        <div
+          className="pointer-events-none absolute right-0 top-0 h-full w-32 z-10
+          bg-gradient-to-l from-black/20 via-black/10 to-transparent"
+        />
+
+        {/* TITLE */}
+        <div className="text-center space-y-3">
+          <h2
+            className={`text-4xl font-serif italic ${
+              darkMode ? "text-white" : "text-gray-800"
+            }`}
+          >
             My Skills
           </h2>
-          <p className={`text-base md:text-lg max-w-2xl mx-auto transition-colors duration-500 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
-            Expertise in frontend technologies to create beautiful, interactive, and performant web applications.
+
+          <p
+            className={`text-sm tracking-widest ${
+              darkMode ? "text-yellow-400" : "text-cyan-700"
+            }`}
+          >
+            TECHNOLOGIES I WORK WITH
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {skills.map((skill, idx) => (
-            <div
-              key={idx}
-              className={`group relative p-6 rounded-xl shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl ${
-                darkMode ? "bg-white/5 backdrop-blur-md border border-white/10" : "bg-white/30 backdrop-blur-md border border-gray-200"
-              }`}
-            >
-              <div className={`text-4xl mb-4 transition-colors duration-500 ${darkMode ? "text-teal-400" : "text-cyan-700"}`}>
-                {skill.icon}
-              </div>
-              <h3 className={`text-xl font-semibold mb-2 transition-colors duration-500 ${darkMode ? "text-white" : "text-gray-800"}`}>
-                {skill.title}
-              </h3>
-              <p className={`text-sm leading-relaxed transition-colors duration-500 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
-                {skill.description}
-              </p>
+        {/* FIRST SLIDER */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={24}
+          speed={6000}
+          autoplay={{
+            delay: 1,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          breakpoints={{
+            320: { slidesPerView: 1.2 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          <SwiperSlide>
+            <SkillCard icon={<FaHtml5 />} name="HTML" desc="Semantic structure for modern websites" darkMode={darkMode} />
+          </SwiperSlide>
 
-              {/* Hover glow effect */}
-              <div
-                className={`absolute inset-0 rounded-xl border-2 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none ${
-                  darkMode
-                    ? "border-teal-400/50 shadow-[0_0_20px_4px_rgba(22,186,215,0.4)]"
-                    : "border-cyan-700/50 shadow-[0_0_20px_4px_rgba(0,198,255,0.4)]"
-                }`}
-              ></div>
-            </div>
-          ))}
-        </div>
+          <SwiperSlide>
+            <SkillCard icon={<FaCss3Alt />} name="CSS" desc="Responsive layouts and animations" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<FaBootstrap />} name="Bootstrap" desc="Responsive and mobile-first UI components" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<SiTailwindcss />} name="Tailwind CSS" desc="Utility-first modern CSS framework" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<FaJs />} name="JavaScript" desc="Dynamic and interactive web apps" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<FaReact />} name="React" desc="Component-based UI development" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<FaNodeJs />} name="Node.js" desc="Server-side JavaScript for scalable apps" darkMode={darkMode} />
+          </SwiperSlide>
+        </Swiper>
+
+        {/* SECOND SLIDER */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={24}
+          speed={6000}
+          autoplay={{
+            delay: 1,
+            reverseDirection: true,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          breakpoints={{
+            320: { slidesPerView: 1.2 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          <SwiperSlide>
+            <SkillCard icon={<FaCode />} name="API Integration" desc="Connecting applications with REST APIs" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<SiReactrouter />} name="React Router" desc="Client-side routing for seamless page navigation" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<SiFramer />} name="Framer Motion" desc="Smooth animations and interactive UI transitions" darkMode={darkMode} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <SkillCard icon={<FaReact />} name="Redux Toolkit" desc="Efficient state management for React apps" darkMode={darkMode} />
+          </SwiperSlide>
+        </Swiper>
+
       </div>
     </section>
+  );
+};
+
+const SkillCard = ({ icon, name, desc, darkMode }) => {
+  return (
+    <div
+      className={`flex items-start gap-4 p-8 min-h-[130px] rounded-2xl border transition duration-500
+      ${
+        darkMode
+          ? "bg-white/5 border-white/10 backdrop-blur-md text-white hover:bg-white/10"
+          : "bg-gray-50 border-gray-200 text-gray-800 hover:bg-gray-100"
+      }`}
+    >
+      <div
+        className={`text-3xl p-3 rounded-xl ${
+          darkMode ? "bg-black/40 text-yellow-400" : "bg-gray-200 text-cyan-700"
+        }`}
+      >
+        {icon}
+      </div>
+
+      <div>
+        <p className="text-base font-semibold">{name}</p>
+
+        <p
+          className={`text-sm mt-1 ${
+            darkMode ? "text-gray-300" : "text-gray-600"
+          }`}
+        >
+          {desc}
+        </p>
+      </div>
+    </div>
   );
 };
 

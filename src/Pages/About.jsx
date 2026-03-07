@@ -28,9 +28,7 @@ const About = ({ darkMode }) => {
   return (
     <section
     id="about"
-      className={`py-24 px-6 md:px-20 transition-colors duration-500 ${
-        darkMode ? "bg-gradient-to-br from-[#255265] via-[#203a43] to-[#40758c]" : "bg-white"
-      }`}
+     className="py-24 px-6 md:px-20 transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
 
@@ -112,7 +110,7 @@ const About = ({ darkMode }) => {
           className={`group rounded-xl p-5 transition-transform duration-500 ${
             darkMode
               ? "hover:-translate-y-2 hover:shadow-xl"
-              : "hover:-translate-y-2 hover:shadow-lg bg-white"
+              : "hover:-translate-y-2 hover:shadow-lg"
           }`}
         >
           <h3

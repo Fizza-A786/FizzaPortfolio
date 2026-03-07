@@ -4,6 +4,7 @@ import Hero from "./Pages/Hero";
 import About from "./Pages/About";
 import "./App.css";
 import Skills from "./Pages/Skills";
+import Projects from "./Pages/Projects";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -21,6 +22,7 @@ const App = () => {
         <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
         <About darkMode={darkMode} setDarkMode={setDarkMode} />
         <Skills darkMode={darkMode} setDarkMode={setDarkMode}/>
+        < Projects/>
       </div>
     </div>
   );
