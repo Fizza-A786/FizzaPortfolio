@@ -12,14 +12,14 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className={`py-28 px-6 md:px-20 transition-colors duration-500 ${
+      className={`py-16 md:py-28 px-6 md:px-20 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
 
         {/* IMAGE */}
-        <div className="relative flex justify-center lg:w-1/2">
+        <div className="hidden md:flex relative justify-center lg:w-1/2">
 
           {/* Top Icon */}
           <div className="absolute md:left-8 left-5 top-4 md:top-10 z-10">
@@ -33,13 +33,23 @@ const About = ({ darkMode }) => {
           </div>
 
           <div className="relative group">
+
+            {/* 🔥 OUTER GLOW ADDED */}
+            <div
+              className={`absolute -inset-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl z-[-1] ${
+                darkMode
+                  ? "bg-[#FAF9F6]/40"
+                  : "bg-[#895129]/40"
+              }`}
+            ></div>
+
             {/* Profile Image */}
             <div
-              className={`w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 transition duration-500 group-hover:scale-105
+              className={`w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 transition-all duration-500 group-hover:scale-105
                 ${
                   darkMode
-                    ? "border-[#FAF9F6] shadow-[0_0_30px_rgba(250,249,246,0.4)] group-hover:shadow-[0_0_60px_rgba(250,249,246,0.6)]"
-                    : "border-[#895129] shadow-[0_0_30px_rgba(137,81,41,0.3)] group-hover:shadow-[0_0_60px_rgba(137,81,41,0.6)]"
+                    ? "border-[#FAF9F6] shadow-[0_0_30px_rgba(250,249,246,0.4)] group-hover:shadow-[0_0_60px_rgba(250,249,246,0.7)]"
+                    : "border-[#895129] shadow-[0_0_30px_rgba(137,81,41,0.3)] group-hover:shadow-[0_0_60px_rgba(137,81,41,0.7)]"
                 }`}
             >
               <img
@@ -78,7 +88,7 @@ const About = ({ darkMode }) => {
               </p>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-serif  leading-tight">
+            <h1 className="text-3xl md:text-4xl font-serif leading-tight">
               Passionate{" "}
               <span
                 className={`italic ${
