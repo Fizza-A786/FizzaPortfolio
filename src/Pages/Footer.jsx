@@ -4,15 +4,15 @@ import { FaLinkedin, FaFacebookF, FaWhatsapp, FaGithub } from "react-icons/fa";
 const Footer = ({ darkMode }) => {
   return (
     <footer
-      className={`w-full py-10 px-6 md:px-20 transition-colors duration-500 ${
+      className={`w-full py-10 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between gap-10">
 
         {/* LEFT */}
         <div className="space-y-4 max-w-sm">
-          <h2 className="text-xl font-semibold">Fizza Amjad</h2>
+          <h2 className="font-bold text-xl">Fizza Amjad</h2>
           <p className={`text-sm ${
             darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
           }`}>
@@ -49,7 +49,7 @@ const Footer = ({ darkMode }) => {
 
           {/* Navigation */}
           <div className="space-y-2">
-            <h3 className="font-semibold">Navigation</h3>
+            <h3 className="font-bold text-xl">Navigation</h3>
 
             {[
               { name: "Home", href: "#home" },
@@ -70,7 +70,7 @@ const Footer = ({ darkMode }) => {
 
           {/* Services / Portfolio */}
           <div className="space-y-2">
-            <h3 className="font-semibold">Services</h3>
+            <h3 className="font-bold text-xl">Services</h3>
 
             {[
               "Web Design",
@@ -96,7 +96,7 @@ const Footer = ({ darkMode }) => {
       }`} />
 
       {/* Bottom */}
-      <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-sm gap-3">
+      <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-sm gap-3 px-6 md:px-12">
         <p className={darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/70"}>
           © {new Date().getFullYear()} Fizza Amjad. All rights reserved.
         </p>

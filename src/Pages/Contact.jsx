@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope,FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneVolume } from "react-icons/fa6";
+
 
 const Contact = ({ darkMode }) => {
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ const Contact = ({ darkMode }) => {
   return (
     <section
       id="contact"
-      className={`relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-20 transition-colors duration-500 ${
+      className={`relative py-10 sm:py-16 px-5 sm:px-12 flex items-center justify-center transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
@@ -29,7 +31,7 @@ const Contact = ({ darkMode }) => {
       <div className="absolute top-0 left-10 w-40 h-40 rounded-full opacity-20 blur-3xl bg-[#FAF9F6] animate-pulse-slow"></div>
       <div className="absolute bottom-0 right-10 w-60 h-60 rounded-full opacity-10 blur-3xl bg-[#895129] animate-pulse-slow"></div>
 
-      <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-16 z-10">
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-16 z-10 ">
 
         {/* Contact Info */}
         <div className="flex-1 flex flex-col justify-center gap-6">
@@ -50,7 +52,7 @@ const Contact = ({ darkMode }) => {
               label: "devfizza@example.com",
               link: "mailto:devfizza@example.com"
             },{
-              icon: <FaPhone />,
+              icon: <FaPhoneVolume />,
               label: "+92 326 056 9202",
               link: "tel:+923260569202"
             },{
@@ -130,7 +132,7 @@ const Contact = ({ darkMode }) => {
             ></textarea>
             <button
               type="submit"
-              className={`mt-4 px-10 py-4 rounded-full font-semibold shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md ease-in-out
+              className={`mt-4 px-10 py-4 rounded-full font-semibold shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md ease-in-out cursor-pointer
                 ${
                   darkMode
                     ? "bg-gradient-to-r from-[#FAF9F6]/80 to-[#FAF9F6]/50 text-[#895129]"

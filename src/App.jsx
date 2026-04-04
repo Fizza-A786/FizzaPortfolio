@@ -35,7 +35,7 @@ const App = () => {
           href="https://wa.me/9203260569202"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed  bottom-5 right-5 bg-green-500 text-white p-2 rounded-full shadow-2xl shadow-green-500 hover:scale-110 transition-transform"
+          className="fixed bottom-5 right-5 bg-green-500 text-white p-2 rounded-full shadow-2xl shadow-green-500 hover:scale-110 transition-transform z-50"
         >
           <FaWhatsapp size={28} />
         </a>

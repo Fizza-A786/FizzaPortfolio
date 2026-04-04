@@ -23,7 +23,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         {/* Desktop Links */}
         <ul
-          className={`hidden md:flex space-x-8 text-sm transition-colors duration-500
+          className={`hidden md:flex space-x-8 text-md transition-colors duration-500
           ${darkMode ? "text-[#FAF9F6]" : "text-[#895129]"}
           `}
         >

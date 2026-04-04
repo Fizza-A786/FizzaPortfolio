@@ -79,11 +79,11 @@ const Projects = ({ darkMode }) => {
   return (
     <section
       id="projects"
-      className={`py-12 md:py-24 transition-colors duration-500 ${
+      className={`py-10 sm:py-16 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* TITLE */}
         <div className="text-center mb-8 md:mb-14">

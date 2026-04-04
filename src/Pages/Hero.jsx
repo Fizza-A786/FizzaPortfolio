@@ -21,11 +21,11 @@ const Hero = ({ darkMode }) => {
   return (
     <section
       id="home"
-      className={`min-h-[80vh] md:min-h-[90vh] flex items-center px-4 py-3.5 md:py-14 sm:px-6 md:px-20 transition-colors duration-500 ${
+      className={`pt-10 sm:pt-20 py-10 sm:py-16 flex items-center transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row mt-4 md:mt-16 items-center justify-between gap-8 md:gap-16">
+      <div className="max-w-7xl mx-auto  px-6 md:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-16 items-center justify-between gap-8 md:gap-16">
 
         {/* LEFT CONTENT */}
         <div className="flex-1 text-center md:text-left space-y-6 md:space-y-8">
@@ -85,7 +85,7 @@ const Hero = ({ darkMode }) => {
               darkMode ? "bg-[#FAF9F6]/40" : "bg-[#895129]/40"
             }`}></div>
 
-            <div className={`relative w-64 sm:w-72 md:w-80 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden border-4 transition-all duration-500 group-hover:scale-105 ${
+            <div className={`relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 transition-all duration-500 group-hover:scale-105 ${
               darkMode
                 ? "border-[#FAF9F6] shadow-[0_0_30px_rgba(250,249,246,0.4)] group-hover:shadow-[0_0_60px_rgba(250,249,246,0.7)]"
                 : "border-[#895129] shadow-[0_0_30px_rgba(137,81,41,0.3)] group-hover:shadow-[0_0_60px_rgba(137,81,41,0.7)]"

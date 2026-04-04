@@ -12,11 +12,11 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className={`py-8 md:py-28 px-6 md:px-15 transition-colors duration-500 ${
+      className={`py-10 sm:py-16 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-10 md:gap-20">
 
         {/* IMAGE */}
         <div className="hidden md:flex relative justify-center lg:w-1/2">
