@@ -12,11 +12,11 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className={`py-16 md:py-28 px-6 md:px-20 transition-colors duration-500 ${
+      className={`py-10 md:py-28 px-6 md:px-20 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-20">
 
         {/* IMAGE */}
         <div className="hidden md:flex relative justify-center lg:w-1/2">
@@ -34,7 +34,7 @@ const About = ({ darkMode }) => {
 
           <div className="relative group">
 
-            {/* 🔥 OUTER GLOW ADDED */}
+            {/* Glow */}
             <div
               className={`absolute -inset-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl z-[-1] ${
                 darkMode

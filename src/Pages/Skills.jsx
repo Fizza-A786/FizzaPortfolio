@@ -18,11 +18,12 @@ const Skills = ({ darkMode }) => {
   return (
     <section
       id="skills"
-      className={`py-20 relative overflow-hidden transition-colors duration-500 ${
+      className={`py-12 md:py-20 relative overflow-hidden transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto space-y-16 relative">
+      <div className="max-w-7xl mx-auto space-y-10 md:space-y-16 relative">
+        
         {/* TITLE */}
         <div className="text-center space-y-3">
           <h2
@@ -48,10 +49,7 @@ const Skills = ({ darkMode }) => {
             modules={[Autoplay]}
             spaceBetween={24}
             speed={6000}
-            autoplay={{
-              delay: 1,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 1, disableOnInteraction: false }}
             loop={true}
             breakpoints={{
               320: { slidesPerView: 1.2 },
@@ -59,68 +57,13 @@ const Skills = ({ darkMode }) => {
               1024: { slidesPerView: 3 },
             }}
           >
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaHtml5 />}
-                name="HTML"
-                desc="Semantic structure for modern websites"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaCss3Alt />}
-                name="CSS"
-                desc="Responsive layouts and animations"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaBootstrap />}
-                name="Bootstrap"
-                desc="Responsive and mobile-first UI components"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<SiTailwindcss />}
-                name="Tailwind CSS"
-                desc="Utility-first modern CSS framework"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaJs />}
-                name="JavaScript"
-                desc="Dynamic and interactive web apps"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaReact />}
-                name="React"
-                desc="Component-based UI development"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaNodeJs />}
-                name="Node.js"
-                desc="Server-side JavaScript for scalable apps"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaHtml5 />} name="HTML" desc="Semantic structure for modern websites" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaCss3Alt />} name="CSS" desc="Responsive layouts and animations" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaBootstrap />} name="Bootstrap" desc="Responsive and mobile-first UI components" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<SiTailwindcss />} name="Tailwind CSS" desc="Utility-first modern CSS framework" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaJs />} name="JavaScript" desc="Dynamic and interactive web apps" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaReact />} name="React" desc="Component-based UI development" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaNodeJs />} name="Node.js" desc="Server-side JavaScript for scalable apps" darkMode={darkMode} /></SwiperSlide>
           </Swiper>
         </div>
 
@@ -142,41 +85,10 @@ const Skills = ({ darkMode }) => {
               1024: { slidesPerView: 3 },
             }}
           >
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaCode />}
-                name="API Integration"
-                desc="Connecting applications with REST APIs"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<SiReactrouter />}
-                name="React Router"
-                desc="Client-side routing for seamless page navigation"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<SiFramer />}
-                name="Framer Motion"
-                desc="Smooth animations and interactive UI transitions"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <SkillCard
-                icon={<FaReact />}
-                name="Redux Toolkit"
-                desc="Efficient state management for React apps"
-                darkMode={darkMode}
-              />
-            </SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaCode />} name="API Integration" desc="Connecting applications with REST APIs" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<SiReactrouter />} name="React Router" desc="Client-side routing for seamless page navigation" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<SiFramer />} name="Framer Motion" desc="Smooth animations and interactive UI transitions" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaReact />} name="Redux Toolkit" desc="Efficient state management for React apps" darkMode={darkMode} /></SwiperSlide>
           </Swiper>
         </div>
       </div>
@@ -187,11 +99,11 @@ const Skills = ({ darkMode }) => {
 const SkillCard = ({ icon, name, desc, darkMode }) => {
   return (
     <div
-      className={`flex items-start gap-4 p-8 min-h-[130px] rounded-2xl border transition-all duration-500
+      className={`flex items-start gap-4 p-5 md:p-8 min-h-[130px] rounded-2xl border transition-all duration-500
         ${
           darkMode
             ? "bg-[#FAF9F6]/10 border-[#FAF9F6]/20 text-[#FAF9F6] hover:bg-[#FAF9F6]/20"
-            : "bg-[#895129]/10 border-[#895129]/20 text-[#895129]   hover:bg-[#895129]/20"
+            : "bg-[#895129]/10 border-[#895129]/20 text-[#895129] hover:bg-[#895129]/20"
         }
       `}
     >
