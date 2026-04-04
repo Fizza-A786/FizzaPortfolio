@@ -18,7 +18,7 @@ const Skills = ({ darkMode }) => {
   return (
     <section
       id="skills"
-      className={`py-12 md:py-20 relative overflow-hidden transition-colors duration-500 ${
+      className={`py-8 md:py-13 relative overflow-hidden transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >

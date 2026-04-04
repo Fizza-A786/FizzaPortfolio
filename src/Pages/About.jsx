@@ -12,7 +12,7 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className={`py-10 md:py-28 px-6 md:px-20 transition-colors duration-500 ${
+      className={`py-8 md:py-28 px-6 md:px-15 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >

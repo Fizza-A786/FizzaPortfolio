@@ -21,7 +21,7 @@ const Hero = ({ darkMode }) => {
   return (
     <section
       id="home"
-      className={`min-h-[85vh] md:min-h-screen flex items-center px-4 sm:px-6 md:px-20 transition-colors duration-500 ${
+      className={`min-h-[80vh] md:min-h-[90vh] flex items-center px-4 py-3.5 md:py-14 sm:px-6 md:px-20 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
