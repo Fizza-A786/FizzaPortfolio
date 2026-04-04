@@ -28,8 +28,8 @@ const Contact = ({ darkMode }) => {
       }`}
     >
       {/* Floating Decorative Circles */}
-      <div className="absolute top-0 left-10 w-40 h-40 rounded-full opacity-20 blur-3xl bg-[#FAF9F6] animate-pulse-slow"></div>
-      <div className="absolute bottom-0 right-10 w-60 h-60 rounded-full opacity-10 blur-3xl bg-[#895129] animate-pulse-slow"></div>
+      {/* <div className="absolute top-0 left-10 w-40 h-40 rounded-full opacity-20 blur-3xl bg-[#FAF9F6] animate-pulse-slow"></div>
+      <div className="absolute bottom-0 right-10 w-60 h-60 rounded-full opacity-10 blur-3xl bg-[#895129] animate-pulse-slow"></div> */}
 
       <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-16 z-10 ">
 
@@ -93,7 +93,7 @@ const Contact = ({ darkMode }) => {
         <div className="flex-1 relative">
           <form
             onSubmit={handleSubmit}
-            className={`flex flex-col gap-5 p-10 rounded-3xl border transition-all duration-500 shadow-md backdrop-blur-xl hover:scale-[1.02] hover:shadow-lg ease-in-out ${
+            className={`flex flex-col gap-5 p-5 sm:p-10 rounded-xl border transition-all duration-500 shadow-md backdrop-blur-xl hover:scale-[1.02] hover:shadow-lg ease-in-out ${
               darkMode
                 ? "bg-[#FAF9F6]/10 border-[#FAF9F6]/30 text-[#FAF9F6]"
                 : "bg-[#895129]/10 border-[#895129]/30 text-[#895129]"

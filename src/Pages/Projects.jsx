@@ -103,7 +103,7 @@ const Projects = ({ darkMode }) => {
             <button
               key={btn}
               onClick={() => setFilter(btn)}
-              className={`px-4 md:px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 md:px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                 filter === btn
                   ? darkMode
                     ? "bg-[#FAF9F6] text-[#895129] shadow-lg scale-105"
@@ -121,7 +121,7 @@ const Projects = ({ darkMode }) => {
         {/* GRID */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {filteredProjects.map((project, i) => (
-            <div key={i} className="group relative rounded-2xl p-[1px] overflow-hidden">
+            <div key={i} className="group relative rounded-xl p-[1px] overflow-hidden">
 
               <div
                 className={`rounded-2xl h-full transition duration-500 backdrop-blur-xl hover:-translate-y-1 ${

@@ -1,5 +1,5 @@
 import React from "react";
-import F2 from "../assets/F2.jpg";
+import F2 from "../assets/fiz.jpeg";
 import { FaCode, FaWandSparkles } from "react-icons/fa6";
 
 const About = ({ darkMode }) => {
@@ -117,7 +117,7 @@ const About = ({ darkMode }) => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`group rounded-2xl p-6 transition-all duration-500 hover:-translate-y-3 hover:scale-105 hover:shadow-xl cursor-pointer ${
+                className={`group rounded-xl p-6 transition-all duration-500 hover:-translate-y-3 hover:scale-105 hover:shadow-xl cursor-pointer ${
                   darkMode
                     ? "bg-[#FAF9F6]/10 hover:shadow-[0_10px_30px_rgba(250,249,246,0.3)]"
                     : "bg-[#895129]/10 hover:shadow-[0_10px_30px_rgba(137,81,41,0.3)]"

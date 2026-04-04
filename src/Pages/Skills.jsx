@@ -99,7 +99,7 @@ const Skills = ({ darkMode }) => {
 const SkillCard = ({ icon, name, desc, darkMode }) => {
   return (
     <div
-      className={`flex items-start gap-4 p-5 md:p-8 min-h-[130px] rounded-2xl border transition-all duration-500
+      className={`flex items-start gap-4 p-5 md:p-8 min-h-[130px] rounded-xl border transition-all duration-500
         ${
           darkMode
             ? "bg-[#FAF9F6]/10 border-[#FAF9F6]/20 text-[#FAF9F6] hover:bg-[#FAF9F6]/20"

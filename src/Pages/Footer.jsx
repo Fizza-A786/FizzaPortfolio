@@ -4,8 +4,8 @@ import { FaLinkedin, FaFacebookF, FaWhatsapp, FaGithub } from "react-icons/fa";
 const Footer = ({ darkMode }) => {
   return (
     <footer
-      className={`w-full py-10 transition-colors duration-500 ${
-        darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
+      className={`w-full py-10 transition-colors duration-500 border-t ${
+        darkMode ? "bg-[#895129] text-[#FAF9F6] border-[#FAF9F6]/20" : "bg-[#FAF9F6] text-[#895129] border-[#895129]/20"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between gap-10">
@@ -91,7 +91,7 @@ const Footer = ({ darkMode }) => {
       </div>
 
       {/* Divider */}
-      <div className={`mt-8 border-t ${
+      <div className={`mt-8 border-t  sm:w-[1200px] mx-auto ${
         darkMode ? "border-[#FAF9F6]/20" : "border-[#895129]/20"
       }`} />
 

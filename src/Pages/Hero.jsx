@@ -1,5 +1,5 @@
 import React from "react";
-import F1 from "../assets/F1.jpg";
+import F1 from "../assets/fiz.jpeg";
 import CV from "../assets/FizzaCV.pdf";
 
 const Hero = ({ darkMode }) => {
@@ -21,7 +21,7 @@ const Hero = ({ darkMode }) => {
   return (
     <section
       id="home"
-      className={`pt-10 sm:pt-20 py-10 sm:py-16 flex items-center transition-colors duration-500 ${
+      className={`pt-20 py-10 sm:py-16 flex items-center transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
