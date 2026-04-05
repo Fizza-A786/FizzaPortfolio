@@ -1,5 +1,5 @@
 import React from "react";
-import F1 from "../assets/fiz.jpeg";
+import p2 from "../assets/p2.png";
 import CV from "../assets/FizzaCV.pdf";
 
 const Hero = ({ darkMode }) => {
@@ -90,7 +90,7 @@ const Hero = ({ darkMode }) => {
                 ? "border-[#FAF9F6] shadow-[0_0_30px_rgba(250,249,246,0.4)] group-hover:shadow-[0_0_60px_rgba(250,249,246,0.7)]"
                 : "border-[#895129] shadow-[0_0_30px_rgba(137,81,41,0.3)] group-hover:shadow-[0_0_60px_rgba(137,81,41,0.7)]"
             }`}>
-              <img src={F1} alt="Fizza" className="w-full h-full object-cover" />
+              <img src={p2} alt="Fizza" className="w-full h-full object-cover" />
             </div>
 
           </div>

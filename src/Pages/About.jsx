@@ -1,5 +1,5 @@
 import React from "react";
-import F2 from "../assets/fiz.jpeg";
+import p2 from "../assets/p2.png";
 import { FaCode, FaWandSparkles } from "react-icons/fa6";
 
 const About = ({ darkMode }) => {
@@ -53,7 +53,7 @@ const About = ({ darkMode }) => {
                 }`}
             >
               <img
-                src={F2}
+                src={p2}
                 alt="profile"
                 className="w-full h-full object-cover"
               />
