@@ -1,67 +1,67 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-import carRent from "../assets/carrent.jpg";
-import charityImg from "../assets/charity.jpeg";
+import ecommerce from "../assets/ecommerce.png";
+import lundary from "../assets/lundary.jpg";
 import serviceImg from "../assets/service.png";
 import lawyerImg from "../assets/lawyer.jpg";
-import laundryImg from "../assets/lundary.jpg";
-import bookImg from "../assets/book.png";
+import craftivo from "../assets/craftivo.png";
+import clarity from "../assets/clarity.png";
 
 const projects = [
   {
-    title: "Car Rental",
-    desc: "A responsive car rental platform built with HTML, CSS & JS.",
-    category: "HTML&CSS",
-    tech: ["HTML", "CSS", "JS", "Bootstrap"],
-    image: carRent,
-    github: "#",
-    live: "https://car-rental-yellow.vercel.app/",
+    title: "E-Commerce Website",
+    desc: "A modern and fully responsive e-commerce web application built with React and Redux Toolkit.",
+    category: "React",
+    tech: ["React", "Redux Toolkit", "CSS", "Bootstrap"],
+    image: ecommerce,
+    github: "https://github.com/Fizza-A786/",
+    live: "https://e-commence-olive.vercel.app/",
   },
   {
-    title: "Charity Blush",
-    desc: "React-powered charity platform with interactive UI.",
+    title: "Laundry Website",
+    desc: "Responsive laundry service website with clean UI.",
     category: "React",
-    tech: ["React", "Tailwind", "Framer Motion"],
-    image: charityImg,
-    github: "#",
-    live: "https://charity-blush-psi.vercel.app/",
+    tech: ["React", "Tailwind", "ReduxToolkit"],
+    image: lundary,
+    github: "https://github.com/Fizza-A786/",
+    live: "https://lundary.vercel.app/",
   },
   {
     title: "IT Services",
-    desc: "Task management web app using JS, Node & API integration.",
+    desc: "Task management web app using JS, Node & API.",
     category: "JavaScript",
     tech: ["HTML", "CSS", "JS", "Node", "API"],
     image: serviceImg,
-    github: "#",
+    github: "https://github.com/Fizza-A786/",
     live: "https://it-service-red.vercel.app/",
   },
   {
     title: "Lawyer",
-    desc: "Professional site for lawyers built with React & Tailwind.",
+    desc: "Professional lawyer site built with React.",
     category: "React",
     tech: ["React", "Tailwind", "Framer Motion"],
     image: lawyerImg,
-    github: "#",
-    live: "#",
+    github: "https://github.com/Fizza-A786/",
+    live: "https://lawyer-pi-three.vercel.app/",
   },
   {
-    title: "Laundry Management",
-    desc: "Complete laundry service website built using HTML, CSS & JS.",
+    title: "Craftivo",
+    desc: "Modern dark portfolio website.",
     category: "HTML&CSS",
     tech: ["HTML", "CSS", "JS", "Bootstrap"],
-    image: laundryImg,
-    github: "#",
-    live: "https://lundary.vercel.app/",
+    image: craftivo,
+    github: "https://github.com/Fizza-A786/",
+    live: "https://fizza-a786.github.io/Craftivo/",
   },
   {
-    title: "Book Cover Design",
-    desc: "Creative landing page showcasing book designs.",
+    title: "Clarity",
+    desc: "Creative landing page for books.",
     category: "HTML&CSS",
-    tech: ["HTML", "CSS", "JS", "Tailwind"],
-    image: bookImg,
-    github: "#",
-    live: "https://book-cover-design.vercel.app/",
+    tech: ["HTML", "CSS", "JS", "Bootstrap"],
+    image: clarity,
+    github: "https://github.com/Fizza-A786/",
+    live: "https://fizza-a786.github.io/Clarity/",
   },
 ];
 
@@ -86,31 +86,25 @@ const Projects = ({ darkMode }) => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* TITLE */}
-        <div className="text-center mb-8 md:mb-14">
-          <h2 className="text-4xl font-serif italic">
-            My Projects
-          </h2>
-          <p className={`text-sm tracking-widest mt-2 ${
-            darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
-          }`}>
+        <div className="text-center mb-10">
+          <h2 className="text-4xl font-serif italic">My Projects</h2>
+          <p className="text-sm tracking-widest mt-2 opacity-70">
             FEATURED WORK
           </p>
         </div>
 
         {/* FILTER */}
-        <div className="flex justify-center gap-3 md:gap-4 mb-8 md:mb-14 flex-wrap">
+        <div className="flex justify-center gap-3 mb-10 flex-wrap">
           {["All", "HTML&CSS", "JavaScript", "React"].map((btn) => (
             <button
               key={btn}
               onClick={() => setFilter(btn)}
-              className={`px-4 md:px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
                 filter === btn
                   ? darkMode
-                    ? "bg-[#FAF9F6] text-[#895129] shadow-lg scale-105"
-                    : "bg-[#895129] text-[#FAF9F6] shadow-lg scale-105"
-                  : darkMode
-                  ? "bg-white/10 text-[#FAF9F6] border border-[#FAF9F6]/30 hover:bg-white/20"
-                  : "bg-white border text-[#895129] hover:bg-gray-100"
+                    ? "bg-white text-black scale-105"
+                    : "bg-[#895129] text-white scale-105"
+                  : "bg-white/20 hover:bg-white/30"
               }`}
             >
               {btn}
@@ -119,70 +113,83 @@ const Projects = ({ darkMode }) => {
         </div>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, i) => (
-            <div key={i} className="group relative rounded-xl p-[1px] overflow-hidden">
+            <div key={i} className="group rounded-xl overflow-hidden">
 
               <div
-                className={`rounded-2xl h-full transition duration-500 backdrop-blur-xl hover:-translate-y-1 ${
+                className={`h-full rounded-2xl transition duration-500 backdrop-blur-xl hover:-translate-y-2 ${
                   darkMode
-                    ? "bg-[#FAF9F6]/10 border border-[#FAF9F6]/20 shadow-[0_8px_30px_rgba(250,249,246,0.6)]"
-                    : "bg-[#895129]/10 border border-[#895129]/20 shadow-[0_8px_20px_rgba(137,81,41,0.4)]"
+                    ? "bg-white/10 shadow-[0_8px_25px_rgba(250,249,246,0.3)]"
+                    : "bg-[#895129]/10 shadow-[0_8px_20px_rgba(137,81,41,0.3)]"
                 }`}
               >
-
+                
                 {/* IMAGE */}
                 <div className="relative overflow-hidden rounded-t-2xl">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 md:h-56 object-cover transform group-hover:scale-110 transition duration-700"
+                    className="w-full h-52 object-cover transform group-hover:scale-110 transition duration-700"
                   />
 
-                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-6 ${
-                    darkMode ? "bg-black/60" : "bg-white/70 backdrop-blur-sm"
-                  }`}>
-                    <a href={project.github} className="p-3 rounded-full bg-white text-black hover:scale-110">
+                  {/* ✅ FIXED OVERLAY */}
+                  <div
+                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-6 ${
+                      darkMode
+                        ? "bg-black/60"
+                        : "bg-white/70 backdrop-blur-sm"
+                    }`}
+                  >
+                    <a
+                      href={project.github}
+                      className="p-3 rounded-full bg-white text-black hover:scale-110"
+                    >
                       <FaGithub />
                     </a>
-                    <a href={project.live} className="p-3 rounded-full bg-white text-black hover:scale-110">
+                    <a
+                      href={project.live}
+                      className="p-3 rounded-full bg-white text-black hover:scale-110"
+                    >
                       <FaExternalLinkAlt />
                     </a>
                   </div>
                 </div>
 
                 {/* CONTENT */}
-                <div className="p-4 md:p-6 space-y-4">
-                  <h3 className="text-lg md:text-xl font-semibold">
+                <div className="p-5 space-y-4">
+                  <h3 className="text-lg font-semibold">
                     {project.title}
                   </h3>
 
-                  <p className={`text-sm ${
-                    darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/70"
-                  }`}>
+                  <p className="text-sm opacity-70">
                     {project.desc}
                   </p>
 
+                  {/* TECH */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, index) => (
                       <span
                         key={index}
-                        className={`text-xs px-3 py-1 rounded-full border ${
-                          darkMode
-                            ? "bg-[#FAF9F6]/10 border-[#FAF9F6]/30"
-                            : "bg-[#895129]/10 border-[#895129]/30"
-                        }`}
+                        className="text-xs px-3 py-1 rounded-full bg-white/10"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
+                  {/* LINKS */}
                   <div className="flex gap-6 pt-2 text-sm">
-                    <a href={project.github} className="flex items-center gap-2 hover:text-cyan-500">
+                    <a
+                      href={project.github}
+                      className="flex items-center gap-2 hover:text-cyan-400"
+                    >
                       <FaGithub /> Code
                     </a>
-                    <a href={project.live} className="flex items-center gap-2 hover:text-cyan-500">
+                    <a
+                      href={project.live}
+                      className="flex items-center gap-2 hover:text-cyan-400"
+                    >
                       <FaExternalLinkAlt /> Live
                     </a>
                   </div>

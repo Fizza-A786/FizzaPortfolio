@@ -1,5 +1,5 @@
 import React from "react";
-import p2 from "../assets/p2.png";
+import p3 from "../assets/p3.png";
 import { FaCode, FaWandSparkles } from "react-icons/fa6";
 
 const About = ({ darkMode }) => {
@@ -12,68 +12,58 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className={`py-10 sm:py-16 transition-colors duration-500 ${
+      className={`overflow-hidden py-10 sm:py-16 transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-10 md:gap-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-9 flex flex-col lg:flex-row items-center gap-10 md:gap-24">
 
         {/* IMAGE */}
-        <div className="hidden md:flex relative justify-center lg:w-1/2">
+         <div className="flex-1 flex justify-center relative">
 
-          {/* Top Icon */}
-          <div className="absolute md:left-8 left-5 top-4 md:top-10 z-10">
-            <div
-              className={`p-4 rounded-full shadow-xl transition duration-500 hover:rotate-12 hover:scale-110 cursor-pointer ${
-                darkMode ? "bg-[#FAF9F6] text-[#895129]" : "bg-[#895129] text-[#FAF9F6]"
-              }`}
-            >
-              <FaCode size={20} />
+          {/* ICON TOP */}
+          <div className="absolute top-5 left-5 md:top-10 z-20">
+            <div className={`p-4 rounded-full ${
+              darkMode ? "bg-white text-black" : "bg-[#895129] text-white"
+            }`}>
+              <FaCode />
             </div>
           </div>
 
           <div className="relative group">
 
-            {/* Glow */}
+            {/* GLOW FIXED */}
             <div
-              className={`absolute -inset-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl z-[-1] ${
-                darkMode
-                  ? "bg-[#FAF9F6]/40"
-                  : "bg-[#895129]/40"
+              className={`absolute inset-0 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500 ${
+                darkMode ? "bg-white/40" : "bg-[#895129]/40"
               }`}
             ></div>
 
-            {/* Profile Image */}
+            {/* IMAGE */}
             <div
-              className={`w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 transition-all duration-500 group-hover:scale-105
-                ${
-                  darkMode
-                    ? "border-[#FAF9F6] shadow-[0_0_30px_rgba(250,249,246,0.4)] group-hover:shadow-[0_0_60px_rgba(250,249,246,0.7)]"
-                    : "border-[#895129] shadow-[0_0_30px_rgba(137,81,41,0.3)] group-hover:shadow-[0_0_60px_rgba(137,81,41,0.7)]"
-                }`}
+              className={`relative z-10 w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 transition duration-500 group-hover:scale-105 ${
+                darkMode
+                  ? "border-white shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+                  : "border-[#895129] shadow-[0_0_25px_rgba(137,81,41,0.3)]"
+              }`}
             >
-              <img
-                src={p2}
-                alt="profile"
-                className="w-full h-full object-cover"
-              />
+              <img src={p3} alt="profile" className="w-full h-full object-cover" />
             </div>
 
-            {/* Bottom Icon */}
-            <div className="absolute md:bottom-6 bottom-3 right-6 md:right-8">
-              <div
-                className={`p-4 rounded-full shadow-xl transition duration-500 hover:rotate-12 hover:scale-110 cursor-pointer ${
-                  darkMode ? "bg-[#FAF9F6] text-[#895129]" : "bg-[#895129] text-[#FAF9F6]"
-                }`}
-              >
-                <FaWandSparkles size={20} />
-              </div>
+          </div>
+
+          {/* ICON BOTTOM */}
+          <div className="absolute bottom-5 right-5 md:right-14 z-20">
+            <div className={`p-4 rounded-full ${
+              darkMode ? "bg-white text-black" : "bg-[#895129] text-white"
+            }`}>
+              <FaWandSparkles />
             </div>
           </div>
-        </div>
 
+        </div>
         {/* TEXT */}
-        <div className="lg:w-5xl space-y-12 text-center lg:text-left">
+        <div className="lg:w-full space-y-12 text-center lg:text-left">
 
           {/* Title */}
           <div className="space-y-6">

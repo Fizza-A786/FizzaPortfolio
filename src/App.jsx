@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa"; // ✅ add this
+import { FaWhatsapp } from "react-icons/fa";
 import Navbar from "./Component/Navbar";
 import Hero from "./Pages/Hero";
 import About from "./Pages/About";
@@ -10,12 +10,12 @@ import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className={darkMode ? "dark overflow-x-hidden" : "overflow-x-hidden"}>
       <div
-        className={`relative z-10 transition-colors duration-500 
+        className={`relative z-10 overflow-x-hidden transition-colors duration-500 
         ${
           darkMode
             ? "bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364]"
@@ -23,14 +23,14 @@ const App = () => {
         }`}
       >
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
-        <About darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Skills darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Projects darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Contact darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Hero darkMode={darkMode} />
+        <About darkMode={darkMode} />
+        <Skills darkMode={darkMode} />
+        <Projects darkMode={darkMode} />
+        <Contact darkMode={darkMode} />
+        <Footer darkMode={darkMode} />
 
-        {/* ✅ WhatsApp Button */}
+        {/* WhatsApp Button */}
         <a
           href="https://wa.me/9203260569202"
           target="_blank"

@@ -21,11 +21,11 @@ const Hero = ({ darkMode }) => {
   return (
     <section
       id="home"
-      className={`pt-20 py-10 sm:py-16 flex items-center transition-colors duration-500 ${
+      className={`overflow-hidden pt-20 py-10 sm:py-16 flex items-center transition-colors duration-500 ${
         darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto  px-6 md:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-16 items-center justify-between gap-8 md:gap-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-16 items-center justify-between gap-8 md:gap-16">
 
         {/* LEFT CONTENT */}
         <div className="flex-1 text-center md:text-left space-y-6 md:space-y-8">
@@ -81,14 +81,15 @@ const Hero = ({ darkMode }) => {
 
           <div className="relative group">
 
-            <div className={`absolute -inset-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl ${
+            {/* FIXED GLOW */}
+            <div className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl ${
               darkMode ? "bg-[#FAF9F6]/40" : "bg-[#895129]/40"
             }`}></div>
 
             <div className={`relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 transition-all duration-500 group-hover:scale-105 ${
               darkMode
-                ? "border-[#FAF9F6] shadow-[0_0_30px_rgba(250,249,246,0.4)] group-hover:shadow-[0_0_60px_rgba(250,249,246,0.7)]"
-                : "border-[#895129] shadow-[0_0_30px_rgba(137,81,41,0.3)] group-hover:shadow-[0_0_60px_rgba(137,81,41,0.7)]"
+                ? "border-[#FAF9F6] shadow-[0_0_15px_rgba(250,249,246,0.25)] group-hover:shadow-[0_0_30px_rgba(250,249,246,0.4)]"
+                : "border-[#895129] shadow-[0_0_15px_rgba(137,81,41,0.2)] group-hover:shadow-[0_0_30px_rgba(137,81,41,0.4)]"
             }`}>
               <img src={p2} alt="Fizza" className="w-full h-full object-cover" />
             </div>
