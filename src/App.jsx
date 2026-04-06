@@ -9,6 +9,9 @@ import Home from "./Pages/Home";
 import "./App.css";
 import About from "./Pages/About";
 import Services from "./Pages/Services";
+import Skills from "./Component/home/Skills";
+import Projects from "./Component/home/Projects";
+import Contact from "./Component/home/Contact";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,7 +32,10 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home darkMode={darkMode} />} />
               <Route path="/about" element={<About darkMode={darkMode} />} />
+              <Route path="/skills" element={<Skills darkMode={darkMode} />} />
               <Route path="/services" element={<Services darkMode={darkMode} />} />
+              <Route path="/projects" element={<Projects darkMode={darkMode} />} />
+              <Route path="/contact" element={<Contact darkMode={darkMode} />} />
             </Routes>
           </main>
 

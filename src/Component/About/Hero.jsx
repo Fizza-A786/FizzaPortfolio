@@ -5,7 +5,7 @@ import { FaCode, FaRocket } from "react-icons/fa";
 const About = ({ darkMode }) => {
   return (
     <section
-      className={`min-h-screen py-13 px-6 md:px-16 transition-all duration-500
+      className={`min-h-screen max-w-[1400px] mx-auto px-5 sm:px-12 py-13 transition-all duration-500
       ${
         darkMode
           ? "bg-[#71412C] text-[#FAF9F6]"

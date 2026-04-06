@@ -16,7 +16,7 @@ const About = ({ darkMode }) => {
         darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-9 flex flex-col lg:flex-row items-center gap-10 md:gap-24">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex flex-col lg:flex-row items-center gap-0 md:gap-24">
 
         {/* IMAGE */}
          <div className="flex-1 flex justify-center relative">
