@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-import ecommerce from "../assets/ecommerce.png";
-import lundary from "../assets/lundary.jpg";
-import serviceImg from "../assets/service.png";
-import lawyerImg from "../assets/lawyer.jpg";
-import craftivo from "../assets/craftivo.png";
-import clarity from "../assets/clarity.png";
+import ecommerce from "../../assets/ecommerce.png";
+import lundary from "../../assets/lundary.jpg";
+import serviceImg from "../../assets/service.png";
+import lawyerImg from "../../assets/lawyer.jpg";
+import craftivo from "../../assets/craftivo.png";
+import clarity from "../../assets/clarity.png";
 
 const projects = [
   {
@@ -78,9 +78,8 @@ const Projects = ({ darkMode }) => {
 
   return (
     <section
-      id="projects"
       className={`py-10 sm:py-16 transition-colors duration-500 ${
-        darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
+        darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">

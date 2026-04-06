@@ -22,9 +22,8 @@ const Contact = ({ darkMode }) => {
 
   return (
     <section
-      id="contact"
       className={`relative py-10 sm:py-16 px-5 sm:px-12 flex items-center justify-center transition-colors duration-500 ${
-        darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
+        darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
       {/* Floating Decorative Circles */}

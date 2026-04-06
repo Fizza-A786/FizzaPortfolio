@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import logo1 from "../assets/logo1.png"; // light theme logo
-import logo2 from "../assets/logo2.png"; // dark theme logo
+import logo1 from "../../assets/logo1.png";
+import logo2 from "../../assets/logo2.png";
 import { Sun, Moon } from "lucide-react";
+import { Link } from "react-router-dom"; // ✅ import Link
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,17 +10,19 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-50 backdrop-blur-xl border-b transition-all duration-500
-      ${darkMode ? "bg-[#895129]/90 border-[#FAF9F6]/20" : "bg-[#FAF9F6]/90 border-[#895129]/20"}
+      ${darkMode ? "bg-[#71412C]/90 border-[#FAF9F6]/20" : "bg-[#FAF9F6]/90 border-[#895129]/20"}
       `}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
 
         {/* Logo */}
-        <img
-          src={darkMode ? logo2 : logo1}
-          alt="logo"
-          className="h-16 cursor-pointer transition-all duration-500"
-        />
+        <Link to="/">
+          <img
+            src={darkMode ? logo2 : logo1}
+            alt="logo"
+            className="h-16 cursor-pointer transition-all duration-500"
+          />
+        </Link>
 
         {/* Desktop Links */}
         <ul
@@ -28,11 +31,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           `}
         >
           {[
-            { name: "Home", href: "#home" },
-            { name: "About", href: "#about" },
-            { name: "Skills", href: "#skills" },
-            { name: "Projects", href: "#projects" },
-            { name: "Contact", href: "#contact" },
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+            { name: "Services", path: "/services" }, // optional (if still scroll)
+            { name: "Projects", path: "/projects" },
+            { name: "Contact", path: "/contact" },
           ].map((item) => (
             <li
               key={item.name}
@@ -40,7 +43,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               ${darkMode ? "hover:text-white" : "hover:text-[#895129]"}
               `}
             >
-              <a href={item.href}>{item.name}</a>
+              <Link to={item.path}>
+                {item.name}
+              </Link>
+
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] rounded-full bg-gradient-to-r from-[#FAF9F6] to-[#895129] transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
@@ -54,7 +60,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             ${darkMode ? "bg-[#FAF9F6]/20 border-[#FAF9F6]/40" : "bg-[#895129]/20 border-[#895129]/40"}
             `}
           >
-            {/* Sun */}
             <Sun
               size={16}
               className={`absolute left-2 transition-all duration-500 ${
@@ -63,8 +68,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                   : "opacity-100 scale-100 text-[#895129]"
               }`}
             />
-
-            {/* Moon */}
             <Moon
               size={16}
               className={`absolute right-2 transition-all duration-500 ${
@@ -73,8 +76,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                   : "opacity-0 scale-50"
               }`}
             />
-
-            {/* Toggle Circle */}
             <div
               className={`w-6 h-6 rounded-full shadow-lg transform transition-all duration-500
               ${darkMode ? "translate-x-8 bg-[#FAF9F6]" : "translate-x-0 bg-[#895129]"}`}
@@ -101,22 +102,21 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           `}
         >
           {[
-            { name: "Home", href: "#home" },
-            { name: "About", href: "#about" },
-            { name: "Skills", href: "#skills" },
-            { name: "Projects", href: "#projects" },
-            { name: "Contact", href: "#contact" },
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+            { name: "Projects", path: "/projects" },
+            { name: "Contact", path: "/contact" },
           ].map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.path}
               className={`block transition duration-300 cursor-pointer ${
                 darkMode ? "hover:text-white" : "hover:text-[#895129]"
               }`}
               onClick={() => setIsOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
 
           {/* Mobile Theme Toggle */}

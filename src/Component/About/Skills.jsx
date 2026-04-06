@@ -17,9 +17,8 @@ import { SiReactrouter, SiTailwindcss, SiFramer } from "react-icons/si";
 const Skills = ({ darkMode }) => {
   return (
     <section
-      id="skills"
       className={`py-10 sm:py-16 relative overflow-hidden transition-colors duration-500  ${
-        darkMode ? "bg-[#895129] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
+        darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 mt-5 space-y-10 md:space-y-16 relative">
