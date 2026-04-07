@@ -2,83 +2,93 @@ import React, { useState } from "react";
 import logo1 from "../../assets/logo1.png";
 import logo2 from "../../assets/logo2.png";
 import { Sun, Moon } from "lucide-react";
-import { Link } from "react-router-dom"; // ✅ import Link
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // ✅ Scroll Function
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
+
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-50 backdrop-blur-xl border-b transition-all duration-500
-      ${darkMode ? "bg-[#71412C]/90 border-[#FAF9F6]/20" : "bg-[#FAF9F6]/90 border-[#895129]/20"}
-      `}
+      ${
+        darkMode
+          ? "bg-[#020617]/80 border-white/10 text-[#E2E8F0]"
+          : "bg-[#FAF9F6]/90 border-[#895129]/20 text-[#895129]"
+      }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex items-center justify-between h-20">
 
         {/* Logo */}
-        <Link to="/">
+        <div onClick={() => scrollToSection("home")} className="cursor-pointer">
           <img
             src={darkMode ? logo2 : logo1}
             alt="logo"
-            className="h-16 cursor-pointer transition-all duration-500"
+            className="h-16 transition-all duration-500"
           />
-        </Link>
+        </div>
 
         {/* Desktop Links */}
-        <ul
-          className={`hidden md:flex space-x-8 text-md transition-colors duration-500
-          ${darkMode ? "text-[#FAF9F6]" : "text-[#895129]"}
-          `}
-        >
+        <ul className="hidden md:flex space-x-8 text-md">
           {[
-            { name: "Home", path: "/" },
-            { name: "About", path: "/about" },
-            { name: "Skills", path: "/skills" },
-            { name: "Projects", path: "/projects" },
-            { name: "Contact", path: "/contact" },
+            { name: "Home", id: "home" },
+            { name: "About", id: "about" },
+            { name: "Skills", id: "skills" },
+            { name: "Projects", id: "projects" },
+            { name: "Contact", id: "contact" },
           ].map((item) => (
             <li
               key={item.name}
-              className={`relative group cursor-pointer transition-all duration-300
-              ${darkMode ? "hover:text-white" : "hover:text-[#895129]"}
-              `}
+              onClick={() => scrollToSection(item.id)}
+              className="relative group cursor-pointer transition-all duration-300 hover:text-blue-400"
             >
-              <Link to={item.path}>
-                {item.name}
-              </Link>
+              {item.name}
 
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] rounded-full bg-gradient-to-r from-[#FAF9F6] to-[#895129] transition-all duration-300 group-hover:w-full"></span>
+              {/* Animated Underline */}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] rounded-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
         </ul>
 
-        {/* Theme Toggle (Desktop) */}
+        {/* Theme Toggle */}
         <div className="hidden md:flex items-center">
           <button
             onClick={() => setDarkMode(!darkMode)}
             className={`relative w-16 h-8 flex items-center rounded-full border p-1 transition-all duration-500
-            ${darkMode ? "bg-[#FAF9F6]/20 border-[#FAF9F6]/40" : "bg-[#895129]/20 border-[#895129]/40"}
-            `}
+            ${
+              darkMode
+                ? "bg-[#1E293B] border-white/20"
+                : "bg-[#895129]/20 border-[#895129]/40"
+            }`}
           >
             <Sun
               size={16}
               className={`absolute left-2 transition-all duration-500 ${
                 darkMode
                   ? "opacity-0 scale-50"
-                  : "opacity-100 scale-100 text-[#895129]"
+                  : "opacity-100 text-[#895129]"
               }`}
             />
             <Moon
               size={16}
               className={`absolute right-2 transition-all duration-500 ${
                 darkMode
-                  ? "opacity-100 scale-100 text-[#FAF9F6]"
+                  ? "opacity-100 text-blue-300"
                   : "opacity-0 scale-50"
               }`}
             />
             <div
               className={`w-6 h-6 rounded-full shadow-lg transform transition-all duration-500
-              ${darkMode ? "translate-x-8 bg-[#FAF9F6]" : "translate-x-0 bg-[#895129]"}`}
+              ${
+                darkMode
+                  ? "translate-x-8 bg-blue-400"
+                  : "translate-x-0 bg-[#895129]"
+              }`}
             />
           </button>
         </div>
@@ -87,7 +97,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`${darkMode ? "text-[#FAF9F6]" : "text-[#895129]"} text-2xl font-bold`}
+            className="text-2xl"
           >
             {isOpen ? "✕" : "☰"}
           </button>
@@ -98,55 +108,38 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       {isOpen && (
         <div
           className={`md:hidden backdrop-blur-xl border-t px-6 py-6 space-y-4 text-center transition-all duration-500
-          ${darkMode ? "bg-[#895129]/90 border-[#FAF9F6]/20 text-[#FAF9F6]" : "bg-[#FAF9F6]/90 border-[#895129]/20 text-[#895129]"}
-          `}
+          ${
+            darkMode
+              ? "bg-[#020617]/95 border-white/10 text-[#E2E8F0]"
+              : "bg-[#FAF9F6]/95 border-[#895129]/20 text-[#895129]"
+          }`}
         >
           {[
-            { name: "Home", path: "/" },
-            { name: "About", path: "/about" },
-            { name: "Skills", path: "/skills" },
-            { name: "Projects", path: "/projects" },
-            { name: "Contact", path: "/contact" },
+            { name: "Home", id: "home" },
+            { name: "About", id: "about" },
+            { name: "Skills", id: "skills" },
+            { name: "Projects", id: "projects" },
+            { name: "Contact", id: "contact" },
           ].map((item) => (
-            <Link
+            <div
               key={item.name}
-              to={item.path}
-              className={`block transition duration-300 cursor-pointer ${
-                darkMode ? "hover:text-white" : "hover:text-[#895129]"
-              }`}
-              onClick={() => setIsOpen(false)}
+              onClick={() => scrollToSection(item.id)}
+              className="cursor-pointer hover:text-blue-400 transition"
             >
               {item.name}
-            </Link>
+            </div>
           ))}
 
           {/* Mobile Theme Toggle */}
           <div className="flex justify-center pt-4">
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className={`relative w-16 h-8 flex items-center rounded-full border p-1 transition-all duration-500
-              ${darkMode ? "bg-[#FAF9F6]/20 border-[#FAF9F6]/40" : "bg-[#895129]/20 border-[#895129]/40"}
-              `}
+              className="relative w-16 h-8 flex items-center rounded-full border p-1"
             >
-              <Sun
-                size={16}
-                className={`absolute left-2 transition-all duration-500 ${
-                  darkMode
-                    ? "opacity-0 scale-50"
-                    : "opacity-100 scale-100 text-[#895129]"
-                }`}
-              />
-              <Moon
-                size={16}
-                className={`absolute right-2 transition-all duration-500 ${
-                  darkMode
-                    ? "opacity-100 scale-100 text-[#FAF9F6]"
-                    : "opacity-0 scale-50"
-                }`}
-              />
               <div
-                className={`w-6 h-6 rounded-full shadow-lg transform transition-all duration-500
-                ${darkMode ? "translate-x-8 bg-[#FAF9F6]" : "translate-x-0 bg-[#895129]"}`}
+                className={`w-6 h-6 rounded-full transition-all ${
+                  darkMode ? "translate-x-8 bg-blue-400" : "bg-[#895129]"
+                }`}
               />
             </button>
           </div>
