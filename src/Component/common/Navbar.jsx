@@ -33,7 +33,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           {[
             { name: "Home", path: "/" },
             { name: "About", path: "/about" },
-            { name: "Services", path: "/services" }, // optional (if still scroll)
+            { name: "Skills", path: "/skills" }, // optional (if still scroll)
             { name: "Projects", path: "/projects" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (

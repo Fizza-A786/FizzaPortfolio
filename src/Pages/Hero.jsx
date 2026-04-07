@@ -1,6 +1,6 @@
 import React from "react";
-import p2 from "../../assets/p2.png";
-import CV from "../../assets/FizzaCV.pdf";
+import p2 from "../assets/p2.png";
+import CV from "../assets/FizzaCV.pdf";
 
 const Hero = ({ darkMode }) => {
 
@@ -21,7 +21,7 @@ const Hero = ({ darkMode }) => {
   return (
     <section
       className={`overflow-hidden pt-20 py-10 sm:py-16 flex items-center transition-colors duration-500 ${
-        darkMode ? "bg-[#5e473a] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
+        darkMode ? "bg-black/90 text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-16 items-center justify-between gap-8 md:gap-16">

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-import ecommerce from "../../assets/ecommerce.png";
-import lundary from "../../assets/lundary.jpg";
-import serviceImg from "../../assets/service.png";
-import lawyerImg from "../../assets/lawyer.jpg";
-import craftivo from "../../assets/craftivo.png";
-import clarity from "../../assets/clarity.png";
+import ecommerce from "../assets/ecommerce.png";
+import lundary from "../assets/lundary.jpg";
+import serviceImg from "../assets/service.png";
+import lawyerImg from "../assets/lawyer.jpg";
+import craftivo from "../assets/craftivo.png";
+import clarity from "../assets/clarity.png";
 
 const projects = [
   {

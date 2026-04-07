@@ -4,32 +4,35 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Component/common/Navbar";
 import Footer from "./Component/common/Footer";
-import Home from "./Pages/Home";
 
 import "./App.css";
+import Hero from "./Pages/Hero";
 import About from "./Pages/About";
-import Services from "./Pages/Services";
+import Skills from "./Pages/Skills";
+import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
     <Router>
-      {/* 🌙 DARK MODE ROOT CLASS */}
       <div className={darkMode ? "dark" : ""}>
         <div
           className={`min-h-screen transition-all duration-500
-          dark:bg-gray-900 dark:text-white bg-white text-black`}
+          dark:bg-[#0F172A] dark:text-white bg-[#FAF9F6] text-black`}
         >
           {/* Navbar */}
           <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-          {/* Pages */}
-          <main>
+          {/* Routes */}
+          <main className="pt-20">
             <Routes>
-              <Route path="/" element={<Home darkMode={darkMode} />} />
-              <Route path="/about" element={<About darkMode={darkMode} />} />
-              <Route path="/services" element={<Services darkMode={darkMode} />} />
+              <Route path="/" element={<Hero />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
 
