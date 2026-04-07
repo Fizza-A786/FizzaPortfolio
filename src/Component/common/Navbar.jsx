@@ -13,7 +13,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       ${darkMode ? "bg-[#71412C]/90 border-[#FAF9F6]/20" : "bg-[#FAF9F6]/90 border-[#895129]/20"}
       `}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex items-center justify-between h-20">
 
         {/* Logo */}
         <Link to="/">
@@ -33,7 +33,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           {[
             { name: "Home", path: "/" },
             { name: "About", path: "/about" },
-            { name: "Skills", path: "/skills" }, // optional (if still scroll)
+            { name: "Skills", path: "/skills" },
             { name: "Projects", path: "/projects" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (
@@ -104,6 +104,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           {[
             { name: "Home", path: "/" },
             { name: "About", path: "/about" },
+            { name: "Skills", path: "/skills" },
             { name: "Projects", path: "/projects" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (

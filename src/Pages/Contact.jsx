@@ -22,7 +22,7 @@ const Contact = ({ darkMode }) => {
 
   return (
     <section
-      className={`relative py-10 sm:py-16 px-5 sm:px-12 flex items-center justify-center transition-colors duration-500 ${
+      className={`relative py-10 sm:py-16  flex items-center justify-center transition-colors duration-500 ${
         darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
@@ -30,7 +30,7 @@ const Contact = ({ darkMode }) => {
       {/* <div className="absolute top-0 left-10 w-40 h-40 rounded-full opacity-20 blur-3xl bg-[#FAF9F6] animate-pulse-slow"></div>
       <div className="absolute bottom-0 right-10 w-60 h-60 rounded-full opacity-10 blur-3xl bg-[#895129] animate-pulse-slow"></div> */}
 
-      <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-16 z-10 ">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex flex-col lg:flex-row gap-16 z-10 ">
 
         {/* Contact Info */}
         <div className="flex-1 flex flex-col justify-center gap-6">

@@ -4,18 +4,16 @@ import { FaLinkedin, FaFacebookF, FaWhatsapp, FaGithub } from "react-icons/fa";
 const Footer = ({ darkMode }) => {
   return (
     <footer
-      className={`w-full py-10 transition-colors duration-500 border-t ${
-        darkMode ? "bg-[#71412C] text-[#FAF9F6] border-[#FAF9F6]/20" : "bg-[#FAF9F6] text-[#895129] border-[#895129]/20"
-      }`}
+      className={`w-full py-10 transition-colors duration-500 border-t ${darkMode ? "bg-[#71412C] text-[#FAF9F6] border-[#FAF9F6]/20" : "bg-[#FAF9F6] text-[#895129] border-[#895129]/20"
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between gap-10">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex flex-col md:flex-row justify-between gap-10">
 
         {/* LEFT */}
         <div className="space-y-4 max-w-sm">
           <h2 className="font-bold text-xl">Fizza Amjad</h2>
-          <p className={`text-sm ${
-            darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
-          }`}>
+          <p className={`text-sm ${darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
+            }`}>
             Frontend Developer crafting modern and user-friendly websites.
           </p>
 
@@ -32,11 +30,10 @@ const Footer = ({ darkMode }) => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 ${
-  darkMode
-    ? "bg-[#FAF9F6] text-[#895129] hover:shadow-[0_4px_15px_rgba(137,81,41,0.4)]"
-    : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_4px_15px_rgba(0,0,0,0.25)]"
-}`}
+                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 ${darkMode
+                    ? "bg-[#FAF9F6] text-[#895129] hover:shadow-[0_4px_15px_rgba(137,81,41,0.4)]"
+                    : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_4px_15px_rgba(0,0,0,0.25)]"
+                  }`}
               >
                 {item.icon}
               </a>
@@ -91,9 +88,8 @@ const Footer = ({ darkMode }) => {
       </div>
 
       {/* Divider */}
-      <div className={`mt-8 border-t  sm:w-[1200px] mx-auto ${
-        darkMode ? "border-[#FAF9F6]/20" : "border-[#895129]/20"
-      }`} />
+      <div className={`mt-8 border-t  sm:w-[1300px] mx-auto ${darkMode ? "border-[#FAF9F6]/20" : "border-[#895129]/20"
+        }`} />
 
       {/* Bottom */}
       <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-sm gap-3 px-6 md:px-12">

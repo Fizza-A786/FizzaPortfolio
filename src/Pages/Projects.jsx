@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-
 import ecommerce from "../assets/ecommerce.png";
 import lundary from "../assets/lundary.jpg";
-import serviceImg from "../assets/service.png";
 import lawyerImg from "../assets/lawyer.jpg";
-import craftivo from "../assets/craftivo.png";
-import clarity from "../assets/clarity.png";
+import charity from "../assets/charity.jpeg";
+import pest from "../assets/pest.png";
+import foodymat from "../assets/foodymat.jpg";
 
 const projects = [
   {
@@ -28,13 +27,13 @@ const projects = [
     live: "https://lundary.vercel.app/",
   },
   {
-    title: "IT Services",
-    desc: "Task management web app using JS, Node & API.",
-    category: "JavaScript",
-    tech: ["HTML", "CSS", "JS", "Node", "API"],
-    image: serviceImg,
+    title: "charity",
+    desc: "Modern dark portfolio website.",
+    category: "HTML&CSS",
+    tech: ["HTML", "CSS", "JS", "Bootstrap"],
+    image: charity,
     github: "https://github.com/Fizza-A786/",
-    live: "https://it-service-red.vercel.app/",
+    live: "https://charity-blush-psi.vercel.app/",
   },
   {
     title: "Lawyer",
@@ -46,22 +45,22 @@ const projects = [
     live: "https://lawyer-pi-three.vercel.app/",
   },
   {
-    title: "Craftivo",
-    desc: "Modern dark portfolio website.",
-    category: "HTML&CSS",
-    tech: ["HTML", "CSS", "JS", "Bootstrap"],
-    image: craftivo,
+    title: "Pest Control",
+    desc: "Task management web app using JS, Node & API.",
+    category: "JavaScript",
+    tech: ["HTML", "CSS", "JS", "Node", "API"],
+    image: pest,
     github: "https://github.com/Fizza-A786/",
-    live: "https://fizza-a786.github.io/Craftivo/",
+    live: "https://pest-control-omega.vercel.app/",
   },
   {
-    title: "Clarity",
+    title: "foodymat",
     desc: "Creative landing page for books.",
     category: "HTML&CSS",
     tech: ["HTML", "CSS", "JS", "Bootstrap"],
-    image: clarity,
+    image: foodymat,
     github: "https://github.com/Fizza-A786/",
-    live: "https://fizza-a786.github.io/Clarity/",
+    live: "https://restaurant-rho-ruddy.vercel.app/",
   },
 ];
 
@@ -82,7 +81,7 @@ const Projects = ({ darkMode }) => {
         darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-12">
 
         {/* TITLE */}
         <div className="text-center mb-10">
