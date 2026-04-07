@@ -20,10 +20,8 @@ const Hero = ({ darkMode }) => {
 
   return (
     <section
-      className={`overflow-hidden pt-20 py-10 sm:py-16 flex items-center transition-all duration-500 ${
-        darkMode
-          ? "bg-gradient-to-br from-[#020617] via-[#0F172A] to-[#1E3A8A] text-[#E2E8F0]"
-          : "bg-[#FAF9F6] text-[#895129]"
+      className={`overflow-hidden pt-10 py-10 md:py-5 flex items-center transition-all duration-500 ${
+        darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-16 items-center justify-between gap-8 md:gap-16">
@@ -32,26 +30,26 @@ const Hero = ({ darkMode }) => {
         <div className="flex-1 text-center md:text-left space-y-6 md:space-y-8">
 
           <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mt-2 md:mt-0">
-            <span className={`w-10 h-[2px] ${darkMode ? "bg-blue-400" : "bg-[#895129]"}`}></span>
+            <span className={`w-10 h-[2px] ${darkMode ? "bg-[#C08B5C]" : "bg-[#895129]"}`}></span>
             <p className={`text-sm tracking-[3px] font-medium ${
-              darkMode ? "text-blue-300" : "text-[#895129]"
+              darkMode ? "text-[#C08B5C]" : "text-[#895129]"
             }`}>
               PREMIUM FRONTEND DEVELOPER
             </p>
           </div>
 
-          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-serif leading-snug md:leading-tight`}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-snug md:leading-tight">
             Hi, I'm
             <br />
             <span className={`italic ${
-              darkMode ? "text-blue-400" : "text-[#895129]"
+              darkMode ? "text-[#C08B5C]" : "text-[#895129]"
             }`}>
               Fizza Amjad.
             </span>
           </h1>
 
           <p className={`text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed ${
-            darkMode ? "text-[#94A3B8]" : "text-[#895129]/90"
+            darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/90"
           }`}>
             I'm a <span className="font-semibold">React Frontend Developer</span> creating 
             <span className="italic"> fast, modern, and engaging websites</span> that turn ideas into 
@@ -65,7 +63,7 @@ const Hero = ({ darkMode }) => {
               onClick={handleDownloadCV}
               className={`px-7 py-3 rounded-full font-semibold transition-all duration-500 hover:-translate-y-1 hover:scale-105 ${
                 darkMode
-                  ? "bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.6)]"
+                  ? "bg-[#C08B5C] text-[#1A120B] shadow-lg hover:shadow-[0_0_25px_rgba(192,139,92,0.6)]"
                   : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_0_25px_rgba(137,81,41,0.6)]"
               }`}
             >
@@ -77,7 +75,7 @@ const Hero = ({ darkMode }) => {
               onClick={handleScrollToProjects}
               className={`px-7 py-2.5 rounded-full border-2 font-semibold transition-all duration-500 hover:-translate-y-1 hover:scale-105 ${
                 darkMode
-                  ? "border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
+                  ? "border-[#C08B5C] text-[#C08B5C] hover:bg-[#C08B5C] hover:text-[#1A120B] hover:shadow-[0_0_25px_rgba(192,139,92,0.5)]"
                   : "border-[#895129] text-[#895129] hover:bg-[#895129] hover:text-[#FAF9F6]"
               }`}
             >
@@ -92,14 +90,14 @@ const Hero = ({ darkMode }) => {
 
           <div className="relative group">
 
-            {/* Blue Glow */}
+            {/* Brown Glow */}
             <div className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl ${
-              darkMode ? "bg-blue-500/30" : "bg-[#895129]/40"
+              darkMode ? "bg-[#C08B5C]/30" : "bg-[#895129]/40"
             }`}></div>
 
             <div className={`relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-2 transition-all duration-500 group-hover:scale-105 ${
               darkMode
-                ? "border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.4)] group-hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]"
+                ? "border-[#C08B5C] shadow-[0_0_20px_rgba(192,139,92,0.4)] group-hover:shadow-[0_0_40px_rgba(192,139,92,0.6)]"
                 : "border-[#895129] shadow-[0_0_15px_rgba(137,81,41,0.2)] group-hover:shadow-[0_0_30px_rgba(137,81,41,0.4)]"
             }`}>
               <img src={p2} alt="Fizza" className="w-full h-full object-cover" />

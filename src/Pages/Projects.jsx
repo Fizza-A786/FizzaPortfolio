@@ -77,15 +77,17 @@ const Projects = ({ darkMode }) => {
 
   return (
     <section
-      className={`py-10 sm:py-16 transition-colors duration-500 ${
-        darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
+      className={`py-12 transition-all duration-500 ${
+        darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12">
 
         {/* TITLE */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-serif italic">My Projects</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-serif italic">
+            My <span className={darkMode ? "text-[#C08B5C]" : "text-[#895129]"}>Projects</span>
+          </h2>
           <p className="text-sm tracking-widest mt-2 opacity-70">
             FEATURED WORK
           </p>
@@ -100,9 +102,11 @@ const Projects = ({ darkMode }) => {
               className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
                 filter === btn
                   ? darkMode
-                    ? "bg-white text-black scale-105"
+                    ? "bg-[#C08B5C] text-[#1A120B] scale-105"
                     : "bg-[#895129] text-white scale-105"
-                  : "bg-white/20 hover:bg-white/30"
+                  : darkMode
+                  ? "bg-white/10 hover:bg-white/20"
+                  : "bg-[#895129]/10 hover:bg-[#895129]/20"
               }`}
             >
               {btn}
@@ -111,43 +115,43 @@ const Projects = ({ darkMode }) => {
         </div>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, i) => (
-            <div key={i} className="group rounded-xl overflow-hidden">
+            <div key={i} className="group">
 
               <div
-                className={`h-full rounded-2xl transition duration-500 backdrop-blur-xl hover:-translate-y-2 ${
+                className={`rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-3 ${
                   darkMode
-                    ? "bg-white/10 shadow-[0_8px_25px_rgba(250,249,246,0.3)]"
-                    : "bg-[#895129]/10 shadow-[0_8px_20px_rgba(137,81,41,0.3)]"
+                    ? "bg-white/5 backdrop-blur-lg border border-white/10 hover:shadow-[0_10px_30px_rgba(192,139,92,0.3)]"
+                    : "bg-[#895129]/10 hover:shadow-[0_10px_30px_rgba(137,81,41,0.3)]"
                 }`}
               >
-                
+
                 {/* IMAGE */}
-                <div className="relative overflow-hidden rounded-t-2xl">
+                <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-52 object-cover transform group-hover:scale-110 transition duration-700"
+                    className="w-full h-52 object-cover group-hover:scale-110 transition duration-700"
                   />
 
-                  {/* ✅ FIXED OVERLAY */}
+                  {/* THEME MATCHED OVERLAY */}
                   <div
                     className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-6 ${
                       darkMode
-                        ? "bg-black/60"
-                        : "bg-white/70 backdrop-blur-sm"
+                        ? "bg-[#1A120B]/70"
+                        : "bg-[#895129]/70"
                     }`}
                   >
                     <a
                       href={project.github}
-                      className="p-3 rounded-full bg-white text-black hover:scale-110"
+                      className="p-3 rounded-full bg-[#C08B5C] text-[#1A120B] hover:scale-110"
                     >
                       <FaGithub />
                     </a>
                     <a
                       href={project.live}
-                      className="p-3 rounded-full bg-white text-black hover:scale-110"
+                      className="p-3 rounded-full bg-[#C08B5C] text-[#1A120B] hover:scale-110"
                     >
                       <FaExternalLinkAlt />
                     </a>
@@ -169,7 +173,11 @@ const Projects = ({ darkMode }) => {
                     {project.tech.map((tech, index) => (
                       <span
                         key={index}
-                        className="text-xs px-3 py-1 rounded-full bg-white/10"
+                        className={`text-xs px-3 py-1 rounded-full ${
+                          darkMode
+                            ? "bg-[#C08B5C]/20 text-[#C08B5C]"
+                            : "bg-[#895129]/20"
+                        }`}
                       >
                         {tech}
                       </span>
@@ -180,13 +188,13 @@ const Projects = ({ darkMode }) => {
                   <div className="flex gap-6 pt-2 text-sm">
                     <a
                       href={project.github}
-                      className="flex items-center gap-2 hover:text-cyan-400"
+                      className="flex items-center gap-2 hover:text-[#C08B5C]"
                     >
                       <FaGithub /> Code
                     </a>
                     <a
                       href={project.live}
-                      className="flex items-center gap-2 hover:text-cyan-400"
+                      className="flex items-center gap-2 hover:text-[#C08B5C]"
                     >
                       <FaExternalLinkAlt /> Live
                     </a>

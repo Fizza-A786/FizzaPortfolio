@@ -6,7 +6,6 @@ import { Sun, Moon } from "lucide-react";
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // ✅ Scroll Function
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
@@ -18,8 +17,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       className={`w-full fixed top-0 left-0 z-50 backdrop-blur-xl border-b transition-all duration-500
       ${
         darkMode
-          ? "bg-[#020617]/80 border-white/10 text-[#E2E8F0]"
-          : "bg-[#FAF9F6]/90 border-[#895129]/20 text-[#895129]"
+          ? "bg-[#1A120B]/20 border-[#C08B5C]/20 text-[#FAF9F6]"
+          : "bg-[#FAF9F6]/40 border-[#895129]/20 text-[#895129]"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex items-center justify-between h-20">
@@ -45,12 +44,19 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <li
               key={item.name}
               onClick={() => scrollToSection(item.id)}
-              className="relative group cursor-pointer transition-all duration-300 hover:text-blue-400"
+              className={`relative group cursor-pointer transition-all duration-300 ${
+                darkMode ? "hover:text-[#C08B5C]" : "hover:text-[#895129]"
+              }`}
             >
               {item.name}
 
-              {/* Animated Underline */}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] rounded-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span
+                className={`absolute left-0 -bottom-1 w-0 h-[2px] rounded-full transition-all duration-300 group-hover:w-full ${
+                  darkMode
+                    ? "bg-gradient-to-r from-[#C08B5C] to-[#E6C7A1]"
+                    : "bg-gradient-to-r from-[#895129] to-[#C08B5C]"
+                }`}
+              ></span>
             </li>
           ))}
         </ul>
@@ -62,7 +68,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             className={`relative w-16 h-8 flex items-center rounded-full border p-1 transition-all duration-500
             ${
               darkMode
-                ? "bg-[#1E293B] border-white/20"
+                ? "bg-[#3E2723] border-[#C08B5C]/40"
                 : "bg-[#895129]/20 border-[#895129]/40"
             }`}
           >
@@ -78,7 +84,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               size={16}
               className={`absolute right-2 transition-all duration-500 ${
                 darkMode
-                  ? "opacity-100 text-blue-300"
+                  ? "opacity-100 text-[#C08B5C]"
                   : "opacity-0 scale-50"
               }`}
             />
@@ -86,7 +92,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               className={`w-6 h-6 rounded-full shadow-lg transform transition-all duration-500
               ${
                 darkMode
-                  ? "translate-x-8 bg-blue-400"
+                  ? "translate-x-8 bg-[#C08B5C]"
                   : "translate-x-0 bg-[#895129]"
               }`}
             />
@@ -95,10 +101,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-2xl"
-          >
+          <button onClick={() => setIsOpen(!isOpen)} className="text-2xl">
             {isOpen ? "✕" : "☰"}
           </button>
         </div>
@@ -110,7 +113,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           className={`md:hidden backdrop-blur-xl border-t px-6 py-6 space-y-4 text-center transition-all duration-500
           ${
             darkMode
-              ? "bg-[#020617]/95 border-white/10 text-[#E2E8F0]"
+              ? "bg-[#1A120B]/95 border-[#C08B5C]/20 text-[#FAF9F6]"
               : "bg-[#FAF9F6]/95 border-[#895129]/20 text-[#895129]"
           }`}
         >
@@ -124,7 +127,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <div
               key={item.name}
               onClick={() => scrollToSection(item.id)}
-              className="cursor-pointer hover:text-blue-400 transition"
+              className={`cursor-pointer transition ${
+                darkMode ? "hover:text-[#C08B5C]" : "hover:text-[#895129]"
+              }`}
             >
               {item.name}
             </div>
@@ -138,7 +143,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             >
               <div
                 className={`w-6 h-6 rounded-full transition-all ${
-                  darkMode ? "translate-x-8 bg-blue-400" : "bg-[#895129]"
+                  darkMode
+                    ? "translate-x-8 bg-[#C08B5C]"
+                    : "bg-[#895129]"
                 }`}
               />
             </button>

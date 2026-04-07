@@ -17,8 +17,8 @@ import { SiReactrouter, SiTailwindcss, SiFramer } from "react-icons/si";
 const Skills = ({ darkMode }) => {
   return (
     <section
-      className={`py-10 sm:py-16 relative overflow-hidden transition-colors duration-500  ${
-        darkMode ? "bg-[#71412C] text-[#FAF9F6]" : "bg-[#FAF9F6] text-[#895129]"
+      className={`py-8 md:py-10 relative overflow-hidden transition-colors duration-500 ${
+        darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 mt-5 space-y-10 md:space-y-16 relative">
@@ -27,7 +27,7 @@ const Skills = ({ darkMode }) => {
         <div className="text-center space-y-3">
           <h2
             className={`text-4xl font-serif italic ${
-              darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
+              darkMode ? "text-[#C08B5C]" : "text-[#895129]"
             }`}
           >
             My Skills
@@ -35,7 +35,7 @@ const Skills = ({ darkMode }) => {
 
           <p
             className={`text-sm tracking-widest ${
-              darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
+              darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/80"
             }`}
           >
             TECHNOLOGIES I WORK WITH
@@ -101,15 +101,15 @@ const SkillCard = ({ icon, name, desc, darkMode }) => {
       className={`flex items-start gap-4 p-5 md:p-8 min-h-[130px] rounded-xl border transition-all duration-500
         ${
           darkMode
-            ? "bg-[#FAF9F6]/10 border-[#FAF9F6]/20 text-[#FAF9F6] hover:bg-[#FAF9F6]/20"
-            : "bg-[#895129]/10 border-[#895129]/20 text-[#895129] hover:bg-[#895129]/20"
+            ? "bg-white/5 backdrop-blur-lg border-white/10 text-[#FAF9F6] hover:shadow-[0_10px_30px_rgba(192,139,92,0.3)]"
+            : "bg-[#895129]/10 border-[#895129]/20 text-[#895129] hover:shadow-[0_10px_30px_rgba(137,81,41,0.3)]"
         }
       `}
     >
       <div
         className={`text-3xl p-3 rounded-xl flex items-center justify-center ${
           darkMode
-            ? "bg-black/40 text-[#FAF9F6]"
+            ? "bg-[#C08B5C]/20 text-[#C08B5C]"
             : "bg-[#faf2ec] text-[#895129]"
         }`}
       >
@@ -120,7 +120,7 @@ const SkillCard = ({ icon, name, desc, darkMode }) => {
         <p className="text-base font-semibold">{name}</p>
         <p
           className={`text-sm mt-1 ${
-            darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
+            darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/80"
           }`}
         >
           {desc}

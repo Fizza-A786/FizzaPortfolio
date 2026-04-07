@@ -4,20 +4,27 @@ import { FaLinkedin, FaFacebookF, FaWhatsapp, FaGithub } from "react-icons/fa";
 const Footer = ({ darkMode }) => {
   return (
     <footer
-      className={`w-full py-10 transition-colors duration-500 border-t ${darkMode ? "bg-[#71412C] text-[#FAF9F6] border-[#FAF9F6]/20" : "bg-[#FAF9F6] text-[#895129] border-[#895129]/20"
-        }`}
+      className={`w-full py-10 transition-all duration-500 border-t ${
+        darkMode
+          ? " text-[#FAF9F6] border-[#C08B5C]/20"
+          : " text-[#895129] border-[#895129]/20"
+      }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex flex-col md:flex-row justify-between gap-10">
 
         {/* LEFT */}
         <div className="space-y-4 max-w-sm">
           <h2 className="font-bold text-xl">Fizza Amjad</h2>
-          <p className={`text-sm ${darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
-            }`}>
+
+          <p
+            className={`text-sm ${
+              darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/80"
+            }`}
+          >
             Frontend Developer crafting modern and user-friendly websites.
           </p>
 
-          {/* Social Icons (Circle + Hover) */}
+          {/* SOCIAL ICONS */}
           <div className="flex gap-4 pt-2">
             {[
               { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/fizza-amjad-377859381" },
@@ -30,10 +37,11 @@ const Footer = ({ darkMode }) => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 ${darkMode
-                    ? "bg-[#FAF9F6] text-[#895129] hover:shadow-[0_4px_15px_rgba(137,81,41,0.4)]"
-                    : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_4px_15px_rgba(0,0,0,0.25)]"
-                  }`}
+                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 ${
+                  darkMode
+                    ? "bg-[#C08B5C] text-[#1A120B] hover:shadow-[0_4px_15px_rgba(192,139,92,0.5)]"
+                    : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_4px_15px_rgba(137,81,41,0.4)]"
+                }`}
               >
                 {item.icon}
               </a>
@@ -41,11 +49,11 @@ const Footer = ({ darkMode }) => {
           </div>
         </div>
 
-        {/* RIGHT - NAV LINKS (Connected with Navbar) */}
-        <div className="grid grid-cols-2 gap-8 text-sm">
+        {/* RIGHT */}
+        <div className="grid grid-cols-2 gap-10 text-sm">
 
-          {/* Navigation */}
-          <div className="space-y-2">
+          {/* NAVIGATION */}
+          <div className="space-y-3">
             <h3 className="font-bold text-xl">Navigation</h3>
 
             {[
@@ -58,15 +66,17 @@ const Footer = ({ darkMode }) => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block  hover:translate-x-1 transition-all duration-300"
+                className={`block transition-all duration-300 hover:translate-x-1 ${
+                  darkMode ? "hover:text-[#C08B5C]" : "hover:text-[#5a341b]"
+                }`}
               >
                 {item.name}
               </a>
             ))}
           </div>
 
-          {/* Services / Portfolio */}
-          <div className="space-y-2">
+          {/* SERVICES */}
+          <div className="space-y-3">
             <h3 className="font-bold text-xl">Services</h3>
 
             {[
@@ -77,29 +87,47 @@ const Footer = ({ darkMode }) => {
             ].map((item, i) => (
               <p
                 key={i}
-                className=" hover:translate-x-1 transition-all duration-300 cursor-pointer"
+                className={`cursor-pointer transition-all duration-300 hover:translate-x-1 ${
+                  darkMode ? "hover:text-[#C08B5C]" : "hover:text-[#5a341b]"
+                }`}
               >
                 {item}
               </p>
             ))}
           </div>
-
         </div>
       </div>
 
-      {/* Divider */}
-      <div className={`mt-8 border-t  sm:w-[1300px] mx-auto ${darkMode ? "border-[#FAF9F6]/20" : "border-[#895129]/20"
-        }`} />
+      {/* DIVIDER */}
+      <div
+        className={`mt-8 border-t mx-auto max-w-[1300px] ${
+          darkMode
+            ? "border-[#C08B5C]/20"
+            : "border-[#895129]/20"
+        }`}
+      />
 
-      {/* Bottom */}
+      {/* BOTTOM */}
       <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-sm gap-3 px-6 md:px-12">
-        <p className={darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/70"}>
+        <p className={darkMode ? "text-[#FAF9F6]/60" : "text-[#895129]/70"}>
           © {new Date().getFullYear()} Fizza Amjad. All rights reserved.
         </p>
 
         <div className="flex gap-4">
-          <span className="hover:underline cursor-pointer">Privacy Policy</span>
-          <span className="hover:underline cursor-pointer">Terms</span>
+          <span
+            className={`cursor-pointer transition ${
+              darkMode ? "hover:text-[#C08B5C]" : "hover:text-[#5a341b]"
+            }`}
+          >
+            Privacy Policy
+          </span>
+          <span
+            className={`cursor-pointer transition ${
+              darkMode ? "hover:text-[#C08B5C]" : "hover:text-[#5a341b]"
+            }`}
+          >
+            Terms
+          </span>
         </div>
       </div>
     </footer>
