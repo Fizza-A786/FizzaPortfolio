@@ -23,7 +23,7 @@ const Contact = ({ darkMode }) => {
     <section
       id="contact"
       className={`relative py-12 sm:py-16 flex items-center justify-center transition-all duration-500 ${
-        darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
+        darkMode ? "text-[#FAF9F6]" : "text-[#3E2723]"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex flex-col lg:flex-row gap-16">
@@ -43,7 +43,8 @@ const Contact = ({ darkMode }) => {
               darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/80"
             }`}
           >
-            I love turning ideas into reality. Whether you have a project in mind or just want to say hi, drop me a message.
+            I love turning ideas into reality. Whether you have a project in mind
+            or just want to say hi, drop me a message.
           </p>
 
           <div className="space-y-4 mt-4">
@@ -100,8 +101,8 @@ const Contact = ({ darkMode }) => {
             onSubmit={handleSubmit}
             className={`flex flex-col gap-5 p-6 sm:p-10 rounded-2xl transition-all duration-500 backdrop-blur-xl border ${
               darkMode
-                ? "bg-white/5 border-white/10 shadow-[0_0_25px_rgba(192,139,92,0.3)]"
-                : "bg-[#895129]/10 border-[#895129]/20 shadow-md"
+                ? "bg-white/5 border-white/10 shadow-[0_0_10px_rgba(192,139,92,0.3)]"
+                : "bg-[#895129]/5 border-[#895129]/20 shadow-md"
             }`}
           >
             {/* INPUTS */}
@@ -116,10 +117,10 @@ const Contact = ({ darkMode }) => {
                 value={formData[field]}
                 onChange={handleChange}
                 required
-                className={`px-5 py-3 rounded-xl border outline-none transition ${
+                className={`px-5 py-3 rounded-xl border outline-none transition-all duration-300 focus:scale-[1.02] ${
                   darkMode
-                    ? "bg-[#1A120B] border-white/10 text-white placeholder-[#FAF9F6]/40 focus:border-[#C08B5C]"
-                    : "bg-white border-[#895129]/30 placeholder-[#895129]/50 focus:border-[#895129]"
+                    ? "bg-white/5 backdrop-blur-md border-white/20 text-white placeholder-white/50 focus:border-[#C08B5C] focus:bg-white/10 focus:shadow-[0_0_15px_rgba(192,139,92,0.3)]"
+                    : "bg-white/80 backdrop-blur-md border-[#895129]/20 text-[#3E2723] placeholder-[#895129]/50 focus:border-[#895129] focus:bg-white focus:shadow-[0_0_10px_rgba(137,81,41,0.2)]"
                 }`}
               />
             ))}
@@ -131,10 +132,10 @@ const Contact = ({ darkMode }) => {
               value={formData.message}
               onChange={handleChange}
               required
-              className={`px-5 py-3 rounded-xl border outline-none transition ${
+              className={`px-5 py-3 rounded-xl border outline-none transition-all duration-300 focus:scale-[1.02] ${
                 darkMode
-                  ? "bg-[#1A120B] border-white/10 text-white placeholder-[#FAF9F6]/40 focus:border-[#C08B5C]"
-                  : "bg-white border-[#895129]/30 placeholder-[#895129]/50 focus:border-[#895129]"
+                  ? "bg-white/1 backdrop-blur-md border-white/20 text-white placeholder-white/50 focus:border-[#C08B5C] focus:bg-white/10 focus:shadow-[0_0_15px_rgba(192,139,92,0.3)]"
+                  : "bg-white/80 backdrop-blur-md border-[#895129]/20 text-[#3E2723] placeholder-[#895129]/50 focus:border-[#895129] focus:bg-white focus:shadow-[0_0_10px_rgba(137,81,41,0.2)]"
               }`}
             />
 
@@ -143,7 +144,7 @@ const Contact = ({ darkMode }) => {
               type="submit"
               className={`mt-2 px-8 py-3 rounded-full font-semibold transition-all duration-500 hover:scale-105 ${
                 darkMode
-                  ? "bg-[#C08B5C] text-[#1A120B] shadow-lg hover:shadow-[0_0_25px_rgba(192,139,92,0.5)]"
+                  ? "bg-[#C08B5C] text-white shadow-lg hover:shadow-[0_0_25px_rgba(192,139,92,0.5)]"
                   : "bg-[#895129] text-white hover:shadow-[0_0_25px_rgba(137,81,41,0.5)]"
               }`}
             >

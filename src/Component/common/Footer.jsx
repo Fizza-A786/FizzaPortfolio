@@ -39,7 +39,7 @@ const Footer = ({ darkMode }) => {
                 rel="noopener noreferrer"
                 className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 ${
                   darkMode
-                    ? "bg-[#C08B5C] text-[#1A120B] hover:shadow-[0_4px_15px_rgba(192,139,92,0.5)]"
+                    ? "bg-[#C08B5C] text-white hover:shadow-[0_4px_15px_rgba(192,139,92,0.5)]"
                     : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_4px_15px_rgba(137,81,41,0.4)]"
                 }`}
               >

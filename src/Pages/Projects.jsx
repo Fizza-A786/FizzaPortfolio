@@ -102,7 +102,7 @@ const Projects = ({ darkMode }) => {
               className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
                 filter === btn
                   ? darkMode
-                    ? "bg-[#C08B5C] text-[#1A120B] scale-105"
+                    ? "bg-[#C08B5C] text-white scale-105"
                     : "bg-[#895129] text-white scale-105"
                   : darkMode
                   ? "bg-white/10 hover:bg-white/20"
@@ -145,13 +145,13 @@ const Projects = ({ darkMode }) => {
                   >
                     <a
                       href={project.github}
-                      className="p-3 rounded-full bg-[#C08B5C] text-[#1A120B] hover:scale-110"
+                      className="p-3 rounded-full bg-[#C08B5C] text-white hover:scale-110"
                     >
                       <FaGithub />
                     </a>
                     <a
                       href={project.live}
-                      className="p-3 rounded-full bg-[#C08B5C] text-[#1A120B] hover:scale-110"
+                      className="p-3 rounded-full bg-[#C08B5C] text-white hover:scale-110"
                     >
                       <FaExternalLinkAlt />
                     </a>
