@@ -38,7 +38,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             { name: "Home", id: "home" },
             { name: "About", id: "about" },
             { name: "Skills", id: "skills" },
-            { name: "Resume", id: "educationexperience" },
             { name: "Projects", id: "projects" },
             { name: "Contact", id: "contact" },
           ].map((item) => (

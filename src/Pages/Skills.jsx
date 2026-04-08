@@ -17,20 +17,15 @@ import { SiReactrouter, SiTailwindcss, SiFramer } from "react-icons/si";
 const Skills = ({ darkMode }) => {
   return (
     <section
-      className={`py-8 md:py-10 relative overflow-hidden transition-colors duration-500 ${
+      className={`py-8 md:py-10 relative overflow-hidden duration-500 ${
         darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 mt-5 space-y-10 md:space-y-16 relative">
-        
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 mt-5 space-y-10 md:space-y-16">
+
         {/* TITLE */}
-        <div 
-          className="text-center space-y-3"
-          data-aos="fade-up"
-        >
+        <div className="text-center space-y-3" data-aos="fade-up">
           <h2
-            data-aos="zoom-in"
-            data-aos-delay="100"
             className={`text-4xl font-serif italic ${
               darkMode ? "text-[#C08B5C]" : "text-[#895129]"
             }`}
@@ -39,8 +34,6 @@ const Skills = ({ darkMode }) => {
           </h2>
 
           <p
-            data-aos="fade-up"
-            data-aos-delay="200"
             className={`text-sm tracking-widest ${
               darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/80"
             }`}
@@ -50,61 +43,67 @@ const Skills = ({ darkMode }) => {
         </div>
 
         {/* FIRST SLIDER */}
-        <div 
+        <div
           className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
           data-aos="fade-right"
-          data-aos-delay="200"
         >
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
-            speed={6000}
-            autoplay={{ delay: 1, disableOnInteraction: false }}
+            speed={4000}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
             loop={true}
+            grabCursor={true}
             breakpoints={{
               320: { slidesPerView: 1.2 },
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
           >
-            <SwiperSlide><SkillCard icon={<FaHtml5 />} name="HTML" desc="Semantic structure for modern websites" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<FaCss3Alt />} name="CSS" desc="Responsive layouts and animations" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<FaBootstrap />} name="Bootstrap" desc="Responsive and mobile-first UI components" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<SiTailwindcss />} name="Tailwind CSS" desc="Utility-first modern CSS framework" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<FaJs />} name="JavaScript" desc="Dynamic and interactive web apps" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<FaReact />} name="React" desc="Component-based UI development" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<FaNodeJs />} name="Node.js" desc="Server-side JavaScript for scalable apps" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaHtml5 />} name="HTML" desc="Semantic structure" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaCss3Alt />} name="CSS" desc="Responsive layouts" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaBootstrap />} name="Bootstrap" desc="UI components" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<SiTailwindcss />} name="Tailwind CSS" desc="Utility-first CSS" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaJs />} name="JavaScript" desc="Dynamic websites" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaReact />} name="React" desc="Component-based UI" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaNodeJs />} name="Node.js" desc="Backend basics" darkMode={darkMode} /></SwiperSlide>
           </Swiper>
         </div>
 
         {/* SECOND SLIDER */}
-        <div 
+        <div
           className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
           data-aos="fade-left"
-          data-aos-delay="300"
         >
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
-            speed={6000}
+            speed={4000}
             autoplay={{
-              delay: 1,
+              delay: 0,
               reverseDirection: true,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             loop={true}
+            grabCursor={true}
             breakpoints={{
               320: { slidesPerView: 1.2 },
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
           >
-            <SwiperSlide><SkillCard icon={<FaCode />} name="API Integration" desc="Connecting applications with REST APIs" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<SiReactrouter />} name="React Router" desc="Client-side routing for seamless page navigation" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<SiFramer />} name="Framer Motion" desc="Smooth animations and interactive UI transitions" darkMode={darkMode} /></SwiperSlide>
-            <SwiperSlide><SkillCard icon={<FaReact />} name="Redux Toolkit" desc="Efficient state management for React apps" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaCode />} name="API Integration" desc="REST APIs" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<SiReactrouter />} name="React Router" desc="Navigation" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<SiFramer />} name="Framer Motion" desc="Animations" darkMode={darkMode} /></SwiperSlide>
+            <SwiperSlide><SkillCard icon={<FaReact />} name="Redux Toolkit" desc="State management" darkMode={darkMode} /></SwiperSlide>
           </Swiper>
         </div>
+
       </div>
     </section>
   );
@@ -113,16 +112,17 @@ const Skills = ({ darkMode }) => {
 const SkillCard = ({ icon, name, desc, darkMode }) => {
   return (
     <div
-      data-aos="zoom-in-up"
-      data-aos-duration="800"
-      className={`flex items-start gap-4 p-5 md:p-8 min-h-[130px] rounded-xl border transition-all duration-500
-        ${
-          darkMode
-            ? "bg-white/5 backdrop-blur-lg border-white/10 text-[#FAF9F6] hover:shadow-[0_10px_30px_rgba(192,139,92,0.3)]"
-            : "bg-[#895129]/10 border-[#895129]/20 text-[#895129] hover:shadow-[0_10px_30px_rgba(137,81,41,0.3)]"
-        }
-      `}
+      className={`flex items-start gap-4 p-5 md:p-8 min-h-[130px] rounded-xl border
+      shadow-sm
+      transition-shadow duration-200
+      hover:shadow-md
+      ${
+        darkMode
+          ? "bg-white/5 backdrop-blur-lg border-white/10 text-[#FAF9F6]"
+          : "bg-[#895129]/10 border-[#895129]/20 text-[#895129]"
+      }`}
     >
+      {/* ICON */}
       <div
         className={`text-3xl p-3 rounded-2xl flex items-center justify-center ${
           darkMode
@@ -133,6 +133,7 @@ const SkillCard = ({ icon, name, desc, darkMode }) => {
         {icon}
       </div>
 
+      {/* TEXT */}
       <div>
         <p className="text-base font-semibold">{name}</p>
         <p

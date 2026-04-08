@@ -10,7 +10,7 @@ import foodymat from "../assets/foodymat.jpg";
 const projects = [
   {
     title: "E-Commerce Website",
-    desc: "A modern and fully responsive e-commerce web application built with React and Redux Toolkit.",
+    desc: "A modern and fully responsive web application.",
     category: "React",
     tech: ["React", "Redux Toolkit", "CSS", "Bootstrap"],
     image: ecommerce,

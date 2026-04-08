@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhoneVolume } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
 
 const Contact = ({ darkMode }) => {
   const [formData, setFormData] = useState({
@@ -9,173 +10,195 @@ const Contact = ({ darkMode }) => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you, ${formData.name}! Your message has been sent.`);
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+    setStatus("");
+
+    emailjs
+      .send(
+        "service_lvohj9g",
+        "template_s7uzu6q",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email, // ✅ important
+        },
+        "6sQ1rU0uZwLXSR4n_"
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS:", result.text);
+          setLoading(false);
+          setStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          console.log("ERROR:", error);
+          setLoading(false);
+          setStatus("error");
+        }
+      );
   };
+
+  const textColor = darkMode ? "text-[#FAF9F6]" : "text-[#3E2723]";
+  const primary = darkMode ? "#C08B5C" : "#895129";
 
   return (
     <section
       id="contact"
-      className={`relative py-12 sm:py-16 flex items-center justify-center transition-all duration-500 ${
-        darkMode ? "text-[#FAF9F6]" : "text-[#3E2723]"
-      }`}
+      className={`relative py-20 flex items-center justify-center ${textColor}`}
     >
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 flex flex-col lg:flex-row gap-16">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-12 flex flex-col lg:flex-row gap-16">
 
         {/* LEFT SIDE */}
-        <div 
-          className="flex-1 flex flex-col justify-center gap-6"
-          data-aos="fade-right"
-        >
+        <div className="flex-1 space-y-6">
+
           <h2
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            className={`text-4xl font-serif italic ${
-              darkMode ? "text-[#C08B5C]" : "text-[#895129]"
-            }`}
+            className="text-4xl font-serif italic"
+            style={{ color: primary }}
           >
-            Let’s Connect
+           Get In Touch
           </h2>
 
           <p
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className={`text-sm sm:text-base md:text-lg ${
-              darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/80"
+            className={`text-sm sm:text-base ${
+              darkMode ? "text-white/70" : "text-[#895129]/80"
             }`}
           >
-            I love turning ideas into reality. Whether you have a project in mind
-            or just want to say hi, drop me a message.
+           I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+Feel free to reach out—I’ll try my best to respond as soon as possible.
           </p>
 
-         <div className="space-y-4 mt-4 max-w-sm">
-  {[
-    {
-      icon: <FaEnvelope />,
-      label: "devfizza@example.com",
-      link: "mailto:devfizza@example.com",
-    },
-    {
-      icon: <FaPhoneVolume />,
-      label: "+92 326 056 9202",
-      link: "tel:+923260569202",
-    },
-    {
-      icon: <FaMapMarkerAlt />,
-      label: "Bahawalpur, Pakistan",
-    },
-  ].map((item, index) => (
-    <div
-      key={index}
-      data-aos="fade-up"
-      data-aos-delay={index * 150}
-      className={`flex items-center gap-4 p-4 rounded-lg border transition-all duration-300 hover:translate-x-2 ${
-        darkMode
-          ? "bg-[#1A120B] border-gray-700 hover:bg-[#2a1d14]"
-          : "bg-white border-gray-300 hover:bg-gray-100"
-      }`}
-    >
-      {/* ICON */}
-      <span
-        className={`text-lg ${
-          darkMode ? "text-[#C08B5C]" : "text-[#895129]"
-        }`}
-      >
-        {item.icon}
-      </span>
+          <div className="space-y-4 mt-8 max-w-sm">
 
-      {/* TEXT */}
-      {item.link ? (
-        <a
-          href={item.link}
-          className={`transition ${
-            darkMode
-              ? "hover:text-[#C08B5C]"
-              : "hover:text-[#5a341b]"
-          }`}
-        >
-          {item.label}
-        </a>
-      ) : (
-        <span>{item.label}</span>
-      )}
-    </div>
-  ))}
-</div>
+            {[ 
+              { icon: <FaEnvelope />, text: "devfizza@example.com" },
+              { icon: <FaPhoneVolume />, text: "+92 326 056 9202" },
+              { icon: <FaMapMarkerAlt />, text: "Bahawalpur, Pakistan" }
+            ].map((item, i) => (
+              <div
+                key={i}
+                className={`flex items-center gap-4 p-5 rounded-xl border
+                transform-gpu will-change-transform
+                transition-all duration-700 ease-out
+                hover:-translate-y-1 hover:scale-[1.015]
+                hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]
+                ${
+                  darkMode
+                    ? "bg-white/5 border-white/10 hover:bg-white/10"
+                    : "bg-white border-[#895129]/10 hover:bg-[#fdf8f4]"
+                }`}
+              >
+                <span style={{ color: primary }}>{item.icon}</span>
+                <span className="text-md">{item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* RIGHT FORM */}
-        <div 
-          className="flex-1"
-          data-aos="fade-left"
-        >
+        <div className="flex-1">
+
           <form
             onSubmit={handleSubmit}
-            data-aos="zoom-in-up"
-            data-aos-delay="200"
-            className={`flex flex-col gap-5 p-6 sm:p-10 rounded-2xl transition-all duration-500 backdrop-blur-xl border ${
+            className={`p-8 sm:p-10 rounded-2xl border space-y-5
+            transform-gpu transition-all duration-700 ease-out
+            hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]
+            ${
               darkMode
-                ? "bg-white/5 border-white/10 shadow-[0_0_10px_rgba(192,139,92,0.3)]"
-                : "bg-[#895129]/5 border-[#895129]/20 shadow-md"
+                ? "bg-white/5 border-white/10"
+                : "bg-white border-[#895129]/10"
             }`}
           >
-            {/* INPUTS */}
-            {["name", "email"].map((field, idx) => (
-              <input
-                key={idx}
-                data-aos="fade-up"
-                data-aos-delay={300 + idx * 100}
-                type={field === "email" ? "email" : "text"}
-                name={field}
-                placeholder={`Your ${
-                  field.charAt(0).toUpperCase() + field.slice(1)
-                }`}
-                value={formData[field]}
-                onChange={handleChange}
-                required
-                className={`px-5 py-3 rounded-xl border outline-none transition-all duration-300 focus:scale-[1.02] ${
-                  darkMode
-                    ? "bg-white/5 backdrop-blur-md border-white/20 text-white placeholder-white/50 focus:border-[#C08B5C] focus:bg-white/10 focus:shadow-[0_0_15px_rgba(192,139,92,0.3)]"
-                    : "bg-white/80 backdrop-blur-md border-[#895129]/20 text-[#3E2723] placeholder-[#895129]/50 focus:border-[#895129] focus:bg-white focus:shadow-[0_0_10px_rgba(137,81,41,0.2)]"
-                }`}
-              />
-            ))}
 
+            {/* NAME */}
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className={`w-full px-4 py-3 rounded-lg border outline-none text-sm
+              transition-all duration-500
+              ${
+                darkMode
+                  ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:border-[#C08B5C]"
+                  : "border-[#895129]/20 text-[#3E2723] focus:border-[#895129]"
+              }`}
+            />
+
+            {/* EMAIL */}
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className={`w-full px-4 py-3 rounded-lg border outline-none text-sm
+              transition-all duration-500
+              ${
+                darkMode
+                  ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:border-[#C08B5C]"
+                  : "border-[#895129]/20 text-[#3E2723] focus:border-[#895129]"
+              }`}
+            />
+
+            {/* MESSAGE */}
             <textarea
               name="message"
               rows={5}
-              data-aos="fade-up"
-              data-aos-delay="500"
               placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
               required
-              className={`px-5 py-3 rounded-xl border outline-none transition-all duration-300 focus:scale-[1.02] ${
+              className={`w-full px-4 py-3 rounded-lg border outline-none text-sm resize-none
+              transition-all duration-500
+              ${
                 darkMode
-                  ? "bg-white/1 backdrop-blur-md border-white/20 text-white placeholder-white/50 focus:border-[#C08B5C] focus:bg-white/10 focus:shadow-[0_0_15px_rgba(192,139,92,0.3)]"
-                  : "bg-white/80 backdrop-blur-md border-[#895129]/20 text-[#3E2723] placeholder-[#895129]/50 focus:border-[#895129] focus:bg-white focus:shadow-[0_0_10px_rgba(137,81,41,0.2)]"
+                  ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:border-[#C08B5C]"
+                  : "border-[#895129]/20 text-[#3E2723] focus:border-[#895129]"
               }`}
             />
+
+            {/* STATUS */}
+            {status === "success" && (
+              <p className="text-green-500 text-sm">
+                Message sent successfully ✅
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-red-500 text-sm">
+                Failed to send ❌ (check console)
+              </p>
+            )}
 
             {/* BUTTON */}
             <button
               type="submit"
-              data-aos="zoom-in"
-              data-aos-delay="600"
-              className={`mt-2 px-8 py-3 rounded-full font-semibold transition-all duration-500 hover:scale-105 ${
-                darkMode
-                  ? "bg-[#C08B5C] text-white shadow-lg hover:shadow-[0_0_25px_rgba(192,139,92,0.5)]"
-                  : "bg-[#895129] text-white hover:shadow-[0_0_25px_rgba(137,81,41,0.5)]"
-              }`}
+              disabled={loading}
+              className="w-full py-3 rounded-lg font-medium
+              transition-all duration-500
+              transform-gpu hover:scale-[1.02] active:scale-[0.98]"
+              style={{
+                backgroundColor: primary,
+                color: "#fff",
+                opacity: loading ? 0.7 : 1,
+              }}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
+
           </form>
         </div>
       </div>

@@ -8,9 +8,11 @@ const Hero = ({ darkMode }) => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 900,
       once: true,
+      easing: "ease-out-cubic",
     });
+    AOS.refresh();
   }, []);
 
   const handleDownloadCV = () => {
@@ -29,20 +31,20 @@ const Hero = ({ darkMode }) => {
 
   return (
     <section
-      className={`overflow-hidden pt-10 py-10 md:py-5 flex items-center transition-all duration-500 ${
+      className={`overflow-hidden pt-10 py-10 md:py-10 flex items-center transition-colors duration-500 ${
         darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-10 items-center justify-between gap-8 md:gap-16">
 
         {/* LEFT CONTENT */}
-        <div 
+        <div
           className="flex-1 text-center md:text-left space-y-6 md:space-y-8"
           data-aos="fade-right"
         >
 
-          <div 
-            className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mt-2 md:mt-0"
+          <div
+            className="flex items-center justify-center md:justify-start gap-2 md:gap-3"
             data-aos="fade-down"
             data-aos-delay="100"
           >
@@ -54,13 +56,12 @@ const Hero = ({ darkMode }) => {
             </p>
           </div>
 
-          <h1 
+          <h1
             className="text-3xl sm:text-4xl md:text-5xl font-serif leading-snug md:leading-tight"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            Hi, I'm
-            <br />
+            Hi, I'm <br />
             <span className={`italic ${
               darkMode ? "text-[#C08B5C]" : "text-[#895129]"
             }`}>
@@ -68,19 +69,19 @@ const Hero = ({ darkMode }) => {
             </span>
           </h1>
 
-          <p 
+          <p
             className={`text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed ${
               darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/90"
             }`}
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            I'm a <span className="font-semibold">React Frontend Developer</span> creating 
-            <span className="italic"> fast, modern, and engaging websites</span> that turn ideas into 
+            I'm a <span className="font-semibold">React Frontend Developer</span> creating
+            <span className="italic"> fast, modern, and engaging websites</span> that turn ideas into
             <span className="font-semibold"> seamless digital experiences</span>.
           </p>
 
-          <div 
+          <div
             className="flex flex-col sm:flex-row items-center md:items-start gap-4 sm:gap-5 pt-2"
             data-aos="fade-up"
             data-aos-delay="400"
@@ -89,12 +90,14 @@ const Hero = ({ darkMode }) => {
             {/* Download CV */}
             <button
               onClick={handleDownloadCV}
-              data-aos="flip-left"
-              data-aos-delay="500"
-              className={`px-7 py-3 rounded-full font-semibold transition-all duration-500 hover:-translate-y-1 hover:scale-105 ${
+              className={`px-7 py-3 rounded-full font-semibold 
+              transform will-change-transform
+              transition-all duration-300 ease-out
+              hover:-translate-y-1 hover:scale-105
+              ${
                 darkMode
-                  ? "bg-[#C08B5C] text-[#FAF9F6] shadow-lg hover:shadow-[0_0_25px_rgba(192,139,92,0.6)]"
-                  : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_0_25px_rgba(137,81,41,0.6)]"
+                  ? "bg-[#C08B5C] text-[#FAF9F6] shadow-md hover:shadow-[0_10px_30px_rgba(192,139,92,0.5)]"
+                  : "bg-[#895129] text-[#FAF9F6] shadow-sm hover:shadow-[0_10px_30px_rgba(137,81,41,0.5)]"
               }`}
             >
               Download CV
@@ -103,12 +106,14 @@ const Hero = ({ darkMode }) => {
             {/* See Work */}
             <button
               onClick={handleScrollToProjects}
-              data-aos="flip-right"
-              data-aos-delay="600"
-              className={`px-7 py-2.5 rounded-full border-2 font-semibold transition-all duration-500 hover:-translate-y-1 hover:scale-105 ${
+              className={`px-7 py-2.5 rounded-full border-2 font-semibold 
+              transform will-change-transform
+              transition-all duration-300 ease-out
+              hover:-translate-y-1 hover:scale-105
+              ${
                 darkMode
-                  ? "border-[#C08B5C] text-[#C08B5C] hover:bg-[#C08B5C] hover:text-[#FAF9F6] hover:shadow-[0_0_25px_rgba(192,139,92,0.5)]"
-                  : "border-[#895129] text-[#895129] hover:bg-[#895129] hover:text-[#FAF9F6]"
+                  ? "border-[#C08B5C] text-[#C08B5C] hover:bg-[#C08B5C] hover:text-[#FAF9F6] hover:shadow-[0_10px_30px_rgba(192,139,92,0.4)]"
+                  : "border-[#895129] text-[#895129] hover:bg-[#895129] hover:text-[#FAF9F6] hover:shadow-[0_10px_30px_rgba(137,81,41,0.4)]"
               }`}
             >
               See My Work
@@ -118,23 +123,33 @@ const Hero = ({ darkMode }) => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div 
+        <div
           className="hidden md:flex flex-1 justify-center md:justify-end relative w-full max-w-[500px]"
           data-aos="zoom-in-left"
           data-aos-delay="300"
         >
 
-          <div className="relative group">
+          <div className="relative group will-change-transform">
 
-            <div className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl ${
-              darkMode ? "bg-[#C08B5C]/30" : "bg-[#895129]/40"
-            }`}></div>
+            {/* Glow Effect */}
+            <div className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 
+              transition-opacity duration-500 blur-2xl ${
+                darkMode ? "bg-[#C08B5C]/30" : "bg-[#895129]/40"
+              }`}>
+            </div>
 
-            <div className={`relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-2 transition-all duration-500 group-hover:scale-105 ${
-              darkMode
-                ? "border-[#C08B5C] shadow-[0_0_20px_rgba(192,139,92,0.4)] group-hover:shadow-[0_0_40px_rgba(192,139,92,0.6)]"
-                : "border-[#895129] shadow-[0_0_15px_rgba(137,81,41,0.2)] group-hover:shadow-[0_0_30px_rgba(137,81,41,0.4)]"
-            }`}>
+            {/* Image */}
+            <div
+              style={{ transform: "translateZ(0)" }}
+              className={`relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-2
+              transform will-change-transform
+              transition-transform duration-300 ease-out
+              group-hover:scale-105 ${
+                darkMode
+                  ? "border-[#C08B5C] shadow-md group-hover:shadow-lg"
+                  : "border-[#895129] shadow-sm group-hover:shadow-md"
+              }`}
+            >
               <img src={p2} alt="Fizza" className="w-full h-full object-cover" />
             </div>
 
