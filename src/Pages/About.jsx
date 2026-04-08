@@ -15,13 +15,20 @@ const About = ({ darkMode }) => {
         darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-7 flex flex-col lg:flex-row items-center gap-10 md:gap-24">
+      <div className="max-w-[1300px] mx-auto px-5 sm:px-12 flex flex-col lg:flex-row items-center gap-10 md:gap-24">
 
         {/* IMAGE */}
-        <div className="flex-1 flex justify-center relative">
+        <div 
+          className="flex-1 flex justify-center relative"
+          data-aos="fade-right"
+        >
 
           {/* ICON TOP */}
-          <div className="absolute top-5 left-5 md:top-10 z-20">
+          <div 
+            className="absolute top-5 left-5 md:top-10 z-20"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             <div className={`p-4 rounded-full ${
               darkMode ? "bg-[#C08B5C] text-[#1A120B] shadow-lg" : "bg-[#895129] text-white"
             }`}>
@@ -40,6 +47,8 @@ const About = ({ darkMode }) => {
 
             {/* IMAGE */}
             <div
+              data-aos="zoom-in-up"
+              data-aos-delay="300"
               className={`relative z-10 w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-2 transition duration-500 group-hover:scale-105 ${
                 darkMode
                   ? "border-[#C08B5C] shadow-[0_0_25px_rgba(192,139,92,0.4)] group-hover:shadow-[0_0_40px_rgba(192,139,92,0.6)]"
@@ -52,7 +61,11 @@ const About = ({ darkMode }) => {
           </div>
 
           {/* ICON BOTTOM */}
-          <div className="absolute bottom-5 right-5 md:right-14 z-20">
+          <div 
+            className="absolute bottom-5 right-5 md:right-14 z-20"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
             <div className={`p-4 rounded-full ${
               darkMode ? "bg-[#C08B5C] text-[#1A120B] shadow-lg" : "bg-[#895129] text-white"
             }`}>
@@ -63,11 +76,18 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* TEXT */}
-        <div className="lg:w-full space-y-12 text-center lg:text-left">
+        <div 
+          className="lg:w-full space-y-12 text-center lg:text-left"
+          data-aos="fade-left"
+        >
 
           {/* Title */}
           <div className="space-y-6">
-            <div className="flex items-center justify-center lg:justify-start gap-3">
+            <div 
+              className="flex items-center justify-center lg:justify-start gap-3"
+              data-aos="fade-down"
+              data-aos-delay="100"
+            >
               <span
                 className={`w-12 h-[2px] ${
                   darkMode ? "bg-[#C08B5C]" : "bg-[#895129]"
@@ -78,7 +98,11 @@ const About = ({ darkMode }) => {
               </p>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-serif leading-tight">
+            <h1 
+              className="text-3xl md:text-4xl font-serif leading-tight"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
               Passionate{" "}
               <span
                 className={`italic ${
@@ -90,6 +114,8 @@ const About = ({ darkMode }) => {
             </h1>
 
             <p
+              data-aos="fade-up"
+              data-aos-delay="300"
               className={`leading-relaxed text-lg md:text-[17px] max-w-xl mx-auto lg:mx-0 ${
                 darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
               }`}
@@ -107,6 +133,8 @@ const About = ({ darkMode }) => {
             {stats.map((stat, index) => (
               <div
                 key={index}
+                data-aos="flip-up"
+                data-aos-delay={index * 150}
                 className={`group rounded-xl p-6 transition-all duration-500 hover:-translate-y-3 hover:scale-105 cursor-pointer ${
                   darkMode
                     ? "bg-white/5 backdrop-blur-lg border border-white/10 hover:shadow-[0_10px_30px_rgba(192,139,92,0.3)]"

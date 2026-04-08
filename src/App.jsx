@@ -8,6 +8,7 @@ import "./App.css";
 import Hero from "./Pages/Hero";
 import About from "./Pages/About";
 import Skills from "./Pages/Skills";
+import EducationExperience from "./Pages/EducationExperience";
 import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
 
@@ -38,6 +39,10 @@ const App = () => {
 
           <section id="skills">
             <Skills darkMode={darkMode} />
+          </section>
+
+          <section id="educationexperience">
+            <EducationExperience darkMode={darkMode} />
           </section>
 
           <section id="projects">

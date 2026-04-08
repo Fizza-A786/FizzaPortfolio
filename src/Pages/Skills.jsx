@@ -24,8 +24,13 @@ const Skills = ({ darkMode }) => {
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12 mt-5 space-y-10 md:space-y-16 relative">
         
         {/* TITLE */}
-        <div className="text-center space-y-3">
+        <div 
+          className="text-center space-y-3"
+          data-aos="fade-up"
+        >
           <h2
+            data-aos="zoom-in"
+            data-aos-delay="100"
             className={`text-4xl font-serif italic ${
               darkMode ? "text-[#C08B5C]" : "text-[#895129]"
             }`}
@@ -34,6 +39,8 @@ const Skills = ({ darkMode }) => {
           </h2>
 
           <p
+            data-aos="fade-up"
+            data-aos-delay="200"
             className={`text-sm tracking-widest ${
               darkMode ? "text-[#FAF9F6]/70" : "text-[#895129]/80"
             }`}
@@ -43,7 +50,11 @@ const Skills = ({ darkMode }) => {
         </div>
 
         {/* FIRST SLIDER */}
-        <div className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div 
+          className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        >
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
@@ -67,7 +78,11 @@ const Skills = ({ darkMode }) => {
         </div>
 
         {/* SECOND SLIDER */}
-        <div className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div 
+          className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
@@ -98,6 +113,8 @@ const Skills = ({ darkMode }) => {
 const SkillCard = ({ icon, name, desc, darkMode }) => {
   return (
     <div
+      data-aos="zoom-in-up"
+      data-aos-duration="800"
       className={`flex items-start gap-4 p-5 md:p-8 min-h-[130px] rounded-xl border transition-all duration-500
         ${
           darkMode
@@ -107,7 +124,7 @@ const SkillCard = ({ icon, name, desc, darkMode }) => {
       `}
     >
       <div
-        className={`text-3xl p-3 rounded-xl flex items-center justify-center ${
+        className={`text-3xl p-3 rounded-2xl flex items-center justify-center ${
           darkMode
             ? "bg-[#C08B5C]/20 text-[#C08B5C]"
             : "bg-[#faf2ec] text-[#895129]"

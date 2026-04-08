@@ -84,20 +84,37 @@ const Projects = ({ darkMode }) => {
       <div className="max-w-[1400px] mx-auto px-5 sm:px-12">
 
         {/* TITLE */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif italic">
+        <div 
+          className="text-center mb-12"
+          data-aos="fade-up"
+        >
+          <h2 
+            className="text-4xl font-serif italic"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
             My <span className={darkMode ? "text-[#C08B5C]" : "text-[#895129]"}>Projects</span>
           </h2>
-          <p className="text-sm tracking-widest mt-2 opacity-70">
+          <p 
+            className="text-sm tracking-widest mt-2 opacity-70"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             FEATURED WORK
           </p>
         </div>
 
         {/* FILTER */}
-        <div className="flex justify-center gap-3 mb-10 flex-wrap">
-          {["All", "HTML&CSS", "JavaScript", "React"].map((btn) => (
+        <div 
+          className="flex justify-center gap-3 mb-10 flex-wrap"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          {["All", "HTML&CSS", "JavaScript", "React"].map((btn, index) => (
             <button
               key={btn}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
               onClick={() => setFilter(btn)}
               className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
                 filter === btn
@@ -117,7 +134,12 @@ const Projects = ({ darkMode }) => {
         {/* GRID */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, i) => (
-            <div key={i} className="group">
+            <div 
+              key={i} 
+              className="group"
+              data-aos="zoom-in-up"
+              data-aos-delay={i * 150}
+            >
 
               <div
                 className={`rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-3 ${
@@ -135,7 +157,6 @@ const Projects = ({ darkMode }) => {
                     className="w-full h-52 object-cover group-hover:scale-110 transition duration-700"
                   />
 
-                  {/* THEME MATCHED OVERLAY */}
                   <div
                     className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-6 ${
                       darkMode
