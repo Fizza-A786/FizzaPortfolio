@@ -31,7 +31,7 @@ const Hero = ({ darkMode }) => {
 
   return (
     <section
-      className={`overflow-hidden pt-10 py-10 md:py-10 flex items-center transition-colors duration-500 ${
+      className={`overflow-hidden pt-10 py-7 md:py-10 flex items-center transition-colors duration-500 ${
         darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >

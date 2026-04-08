@@ -11,7 +11,7 @@ const About = ({ darkMode }) => {
 
   return (
     <section
-      className={`overflow-hidden py-7 md:py-14  duration-500 ${
+      className={`overflow-hidden py-5 md:py-10  duration-500 ${
         darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
@@ -19,7 +19,7 @@ const About = ({ darkMode }) => {
 
         {/* IMAGE SECTION */}
         <div
-          className="flex-1 flex justify-center relative"
+          className="hidden md:flex flex justify-center relative"
           data-aos="fade-right" // ✅ ONLY here
         >
 

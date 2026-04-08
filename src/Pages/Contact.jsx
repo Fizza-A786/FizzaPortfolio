@@ -30,7 +30,7 @@ const Contact = ({ darkMode }) => {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          reply_to: formData.email, // ✅ important
+          reply_to: formData.email,
         },
         "6sQ1rU0uZwLXSR4n_"
       )
@@ -55,18 +55,15 @@ const Contact = ({ darkMode }) => {
   return (
     <section
       id="contact"
-      className={`relative py-20 flex items-center justify-center ${textColor}`}
+      className={`relative md:py-16 py-8 flex items-center justify-center ${textColor}`}
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-12 flex flex-col lg:flex-row gap-16">
 
         {/* LEFT SIDE */}
         <div className="flex-1 space-y-6">
 
-          <h2
-            className="text-4xl font-serif italic"
-            style={{ color: primary }}
-          >
-           Get In Touch
+          <h2 className="text-4xl font-serif italic" style={{ color: primary }}>
+            Get In Touch
           </h2>
 
           <p
@@ -74,35 +71,36 @@ const Contact = ({ darkMode }) => {
               darkMode ? "text-white/70" : "text-[#895129]/80"
             }`}
           >
-           I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-Feel free to reach out—I’ll try my best to respond as soon as possible.
+            I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            Feel free to reach out—I’ll try my best to respond as soon as possible.
           </p>
 
           <div className="space-y-4 mt-8 max-w-sm">
 
-            {[ 
+            {[
               { icon: <FaEnvelope />, text: "devfizza@example.com" },
-              { icon: <FaPhoneVolume />, text: "+92 326 056 9202" },
-              { icon: <FaMapMarkerAlt />, text: "Bahawalpur, Pakistan" }
+              { icon: <FaPhoneVolume />, text: "+92 326 0569202" },
+              { icon: <FaMapMarkerAlt />, text: "Bahawalpur, Pakistan" },
+              
+
             ].map((item, i) => (
               <div
                 key={i}
-                className={`flex items-center gap-4 p-5 rounded-xl border
-                transform-gpu will-change-transform
-                transition-all duration-700 ease-out
-                hover:-translate-y-1 hover:scale-[1.015]
-                hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]
+                className={`flex items-center gap-4 p-5 rounded-xl border backdrop-blur-md
+                transition-all duration-500 ease-out
+                hover:-translate-y-1 hover:shadow-xl
                 ${
                   darkMode
                     ? "bg-white/5 border-white/10 hover:bg-white/10"
-                    : "bg-white border-[#895129]/10 hover:bg-[#fdf8f4]"
+                    : "bg-white/70 border-[#895129]/10 hover:bg-[#fdf8f4]"
                 }`}
               >
-                <span style={{ color: primary }}>{item.icon}</span>
-                <span className="text-md">{item.text}</span>
+                <span style={{ color: primary }} className="text-lg">{item.icon}</span>
+                <span className="text-md font-medium tracking-wide">{item.text}</span>
               </div>
             ))}
           </div>
+          
         </div>
 
         {/* RIGHT FORM */}
@@ -110,75 +108,84 @@ Feel free to reach out—I’ll try my best to respond as soon as possible.
 
           <form
             onSubmit={handleSubmit}
-            className={`p-8 sm:p-10 rounded-2xl border space-y-5
-            transform-gpu transition-all duration-700 ease-out
-            hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]
+            className={`p-8 sm:p-10 rounded-2xl border space-y-6 backdrop-blur-lg
+            transition-all duration-500
+            shadow-lg hover:shadow-2xl
             ${
               darkMode
                 ? "bg-white/5 border-white/10"
-                : "bg-white border-[#895129]/10"
+                : "bg-white/60 border-[#895129]/10"
             }`}
           >
 
             {/* NAME */}
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className={`w-full px-4 py-3 rounded-lg border outline-none text-sm
-              transition-all duration-500
-              ${
-                darkMode
-                  ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:border-[#C08B5C]"
-                  : "border-[#895129]/20 text-[#3E2723] focus:border-[#895129]"
-              }`}
-            />
+            <div className="space-y-1">
+              <label className="text-xs opacity-70">Full Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className={`w-full px-4 py-3 rounded-lg border outline-none text-sm transition-all duration-300
+                focus:ring-2 focus:ring-opacity-40
+                ${
+                  darkMode
+                    ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:ring-[#C08B5C]"
+                    : "border-[#895129]/20 text-[#3E2723] focus:ring-[#895129]"
+                }`}
+              />
+            </div>
 
             {/* EMAIL */}
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className={`w-full px-4 py-3 rounded-lg border outline-none text-sm
-              transition-all duration-500
-              ${
-                darkMode
-                  ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:border-[#C08B5C]"
-                  : "border-[#895129]/20 text-[#3E2723] focus:border-[#895129]"
-              }`}
-            />
+            <div className="space-y-1">
+              <label className="text-xs opacity-70">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className={`w-full px-4 py-3 rounded-lg border outline-none text-sm transition-all duration-300
+                focus:ring-2 focus:ring-opacity-40
+                ${
+                  darkMode
+                    ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:ring-[#C08B5C]"
+                    : "border-[#895129]/20 text-[#3E2723] focus:ring-[#895129]"
+                }`}
+              />
+            </div>
 
             {/* MESSAGE */}
-            <textarea
-              name="message"
-              rows={5}
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className={`w-full px-4 py-3 rounded-lg border outline-none text-sm resize-none
-              transition-all duration-500
-              ${
-                darkMode
-                  ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:border-[#C08B5C]"
-                  : "border-[#895129]/20 text-[#3E2723] focus:border-[#895129]"
-              }`}
-            />
+            <div className="space-y-1">
+              <label className="text-xs opacity-70">Message</label>
+              <textarea
+                name="message"
+                rows={5}
+                placeholder="Write your message..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className={`w-full px-4 py-3 rounded-lg border outline-none text-sm resize-none transition-all duration-300
+                focus:ring-2 focus:ring-opacity-40
+                ${
+                  darkMode
+                    ? "bg-transparent border-white/10 text-white placeholder-white/40 focus:ring-[#C08B5C]"
+                    : "border-[#895129]/20 text-[#3E2723] focus:ring-[#895129]"
+                }`}
+              />
+            </div>
 
             {/* STATUS */}
             {status === "success" && (
-              <p className="text-green-500 text-sm">
+              <p className="text-green-500 text-sm font-medium">
                 Message sent successfully ✅
               </p>
             )}
             {status === "error" && (
-              <p className="text-red-500 text-sm">
+              <p className="text-red-500 text-sm font-medium">
                 Failed to send ❌ (check console)
               </p>
             )}
@@ -187,9 +194,9 @@ Feel free to reach out—I’ll try my best to respond as soon as possible.
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 rounded-lg font-medium
-              transition-all duration-500
-              transform-gpu hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full py-3 rounded-lg font-medium tracking-wide
+              transition-all duration-300
+              hover:shadow-lg active:scale-[0.97]"
               style={{
                 backgroundColor: primary,
                 color: "#fff",

@@ -23,36 +23,36 @@ const EducationExperience = ({ darkMode }) => {
   const education = [
     {
       title: "Matriculation",
-      period: "2019 - 2021",
-      institution: "Govt APS School, Bahawalpur",
+      period: "2020 - 2022",
+      institution: "Superior College",
       icon: <FaSchool className="text-white text-xl" />,
     },
     {
       title: "Intermediate",
-      period: "2021 - 2023",
-      institution: "Post Graduate College, Bahawalpur",
+      period: "2022 - 2024",
+      institution: "Superior College, Bahawalpur",
       icon: <FaGraduationCap className="text-white text-xl" />,
     },
   ];
 
   const experience = [
     {
-      title: "React Developer",
-      period: "Mar 2025 - Dec 2025",
+      title: "Frontend Developer",
+      period: "Aug 2025 - Present",
       company: "Codes Thinker Company",
       icon: <FaCode  className="text-white text-xl" />,
     },
     {
-      title: "WordPress Developer",
-      period: "Jan 2025 - Present",
-      company: "Tech Thrill Company",
+      title: "Web Development",
+      period: "Jan 2026 - March 2026",
+      company: "Islamia University Of BWP",
       icon: <FaLaptopCode className="text-white text-xl" />,
     },
   ];
 
   return (
     <Fragment>
-      <section id="resume" className="relative md:py-20 py-2 overflow-hidden">
+      <section id="resume" className="relative md:py-17 py-2 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-5 sm:px-12 text-center relative z-10">
 
           {/* TITLE */}
@@ -61,7 +61,7 @@ const EducationExperience = ({ darkMode }) => {
             className="text-4xl md:text-5xl font-serif italic mb-6"
             style={{ color: textColor }}
           >
-            <span style={{ color: primaryColor }}>Education</span> Experience
+            <span style={{ color: primaryColor }}>Education &</span> Experience
           </h1>
 
           <div className="flex flex-col lg:flex-row justify-center gap-12 mt-10">

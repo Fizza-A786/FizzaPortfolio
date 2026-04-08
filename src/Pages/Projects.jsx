@@ -77,7 +77,7 @@ const Projects = ({ darkMode }) => {
 
   return (
     <section
-      className={`py-12 transition-all duration-500 ${
+      className={`py-10 transition-all duration-500 ${
         darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
