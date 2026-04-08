@@ -33,7 +33,7 @@ const Hero = ({ darkMode }) => {
         darkMode ? "text-[#FAF9F6]" : "text-[#895129]"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-16 items-center justify-between gap-8 md:gap-16">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-12 w-full flex flex-col-reverse md:flex-row mt-4 md:mt-10 items-center justify-between gap-8 md:gap-16">
 
         {/* LEFT CONTENT */}
         <div 
@@ -93,7 +93,7 @@ const Hero = ({ darkMode }) => {
               data-aos-delay="500"
               className={`px-7 py-3 rounded-full font-semibold transition-all duration-500 hover:-translate-y-1 hover:scale-105 ${
                 darkMode
-                  ? "bg-[#C08B5C] text-[#1A120B] shadow-lg hover:shadow-[0_0_25px_rgba(192,139,92,0.6)]"
+                  ? "bg-[#C08B5C] text-[#FAF9F6] shadow-lg hover:shadow-[0_0_25px_rgba(192,139,92,0.6)]"
                   : "bg-[#895129] text-[#FAF9F6] hover:shadow-[0_0_25px_rgba(137,81,41,0.6)]"
               }`}
             >
@@ -107,7 +107,7 @@ const Hero = ({ darkMode }) => {
               data-aos-delay="600"
               className={`px-7 py-2.5 rounded-full border-2 font-semibold transition-all duration-500 hover:-translate-y-1 hover:scale-105 ${
                 darkMode
-                  ? "border-[#C08B5C] text-[#C08B5C] hover:bg-[#C08B5C] hover:text-[#1A120B] hover:shadow-[0_0_25px_rgba(192,139,92,0.5)]"
+                  ? "border-[#C08B5C] text-[#C08B5C] hover:bg-[#C08B5C] hover:text-[#FAF9F6] hover:shadow-[0_0_25px_rgba(192,139,92,0.5)]"
                   : "border-[#895129] text-[#895129] hover:bg-[#895129] hover:text-[#FAF9F6]"
               }`}
             >

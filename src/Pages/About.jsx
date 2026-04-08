@@ -30,7 +30,7 @@ const About = ({ darkMode }) => {
             data-aos-delay="200"
           >
             <div className={`p-4 rounded-full ${
-              darkMode ? "bg-[#C08B5C] text-[#1A120B] shadow-lg" : "bg-[#895129] text-white"
+              darkMode ? "bg-[#C08B5C] text-white shadow-lg" : "bg-[#895129] text-white"
             }`}>
               <FaCode />
             </div>
@@ -67,7 +67,7 @@ const About = ({ darkMode }) => {
             data-aos-delay="400"
           >
             <div className={`p-4 rounded-full ${
-              darkMode ? "bg-[#C08B5C] text-[#1A120B] shadow-lg" : "bg-[#895129] text-white"
+              darkMode ? "bg-[#C08B5C] text-white shadow-lg" : "bg-[#895129] text-white"
             }`}>
               <FaWandSparkles />
             </div>
@@ -120,11 +120,8 @@ const About = ({ darkMode }) => {
                 darkMode ? "text-[#FAF9F6]/80" : "text-[#895129]/80"
               }`}
             >
-              Hi! I’m a frontend developer who loves bringing ideas to life with clean, modern, and responsive web experiences. 
-              <span className="italic font-semibold">
-                {" "}I specialize in React, JavaScript, HTML, CSS, and Bootstrap
-              </span>, crafting fast, user-friendly, and interactive websites that clients love.
-              Let’s create something amazing together!
+             I am a Frontend Developer focused on building clean, modern, and responsive web applications. I specialize in React, JavaScript, HTML, CSS, and Bootstrap, creating fast, user-friendly, and interactive interfaces with a strong emphasis on performance, usability, and design quality. I am committed to delivering impactful and engaging digital experiences.
+
             </p>
           </div>
 
